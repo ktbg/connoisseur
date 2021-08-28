@@ -1,12 +1,10 @@
-# Project Overview
+# Project Overview - in progress
 
-## Project Name
-
-Art Carousel (**working title)
+## Connoiseur
 
 ## Project Description
 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+{project name} is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by artist, time period, or departm
 
 ## API and Data Sample
 
