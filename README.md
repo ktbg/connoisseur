@@ -1,14 +1,85 @@
-# Project Overview - in progress
-
-## Connoiseur
+# Connoiseur - in progress
 
 ## Project Description
 
-{project name} is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by artist, time period, or departm
+Connoiseur is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by artist, time period, department, and/or medium. Similar to the [Art Institute of Chicago](https://www.artic.edu/collection).
 
 ## API and Data Sample
 
 Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
+
+[Metropolitan Museum of Art API](https://metmuseum.github.io/#search)
+
+```javascript
+{
+    "objectID": 2397,
+    "isHighlight": false,
+    "accessionNumber": "17.108.10a, b",
+    "accessionYear": "1917",
+    "isPublicDomain": true,
+    "primaryImage": "https://images.metmuseum.org/CRDImages/ad/original/DP248991.jpg",
+    "primaryImageSmall": "https://images.metmuseum.org/CRDImages/ad/web-large/DP248991.jpg",
+    "additionalImages": [],
+    "constituents": null,
+    "department": "The American Wing",
+    "objectName": "Jar",
+    "title": "Jar",
+    "culture": "Mexican",
+    "period": "",
+    "dynasty": "",
+    "reign": "",
+    "portfolio": "",
+    "artistRole": "",
+    "artistPrefix": "",
+    "artistDisplayName": "",
+    "artistDisplayBio": "",
+    "artistSuffix": "",
+    "artistAlphaSort": "",
+    "artistNationality": "",
+    "artistBeginDate": "",
+    "artistEndDate": "",
+    "artistGender": "",
+    "artistWikidata_URL": "",
+    "artistULAN_URL": "",
+    "objectDate": "ca. 1800",
+    "objectBeginDate": 1797,
+    "objectEndDate": 1800,
+    "medium": "Tin-glazed earthenware",
+    "dimensions": "H. 6 in. (15.2 cm)",
+    "measurements": [
+        {
+            "elementName": "Overall",
+            "elementDescription": null,
+            "elementMeasurements": {
+                "Height": 15.2
+            }
+        }
+    ],
+    "creditLine": "Gift of Mrs. Robert W. de Forest, 1911",
+    "geographyType": "Made in",
+    "city": "",
+    "state": "",
+    "county": "",
+    "country": "Mexico",
+    "region": "",
+    "subregion": "",
+    "locale": "",
+    "locus": "",
+    "excavation": "",
+    "river": "",
+    "classification": "",
+    "rightsAndReproduction": "",
+    "linkResource": "",
+    "metadataDate": "2021-04-06T04:41:04.967Z",
+    "repository": "Metropolitan Museum of Art, New York, NY",
+    "objectURL": "https://www.metmuseum.org/art/collection/search/2397",
+    "tags": null,
+    "objectWikidata_URL": "",
+    "isTimelineWork": false,
+    "GalleryNumber": "774"
+}
+```
+
 
 ## Wireframes
 
