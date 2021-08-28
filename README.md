@@ -2,11 +2,9 @@
 
 ## Project Description
 
-Connoiseur is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by artist, time period, department, and/or medium. Similar to the [Art Institute of Chicago](https://www.artic.edu/collection).
+Connoiseur is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by artist, time period, or department. Similar to the [Art Institute of Chicago](https://www.artic.edu/collection).
 
 ## API and Data Sample
-
-Specify the API you are using and include a link. Show us a snippet of JSON returned by your API so we know you can access it and get the info you need
 
 [Metropolitan Museum of Art API](https://metmuseum.github.io/#search)
 
@@ -90,33 +88,28 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
-*These are examples only. Replace with your own MVP features.*
 
-- Find and use external api 
-- Render data on page 
-- Allow user to choose favorites 
+- Allow users to select a category to search by from artist, time period, department or medium
+- Allow users to search selected category to select a subcategory
+- Render works from the selected category and subcategory on page with artist and create date for the work
 
 #### PostMVP  
-*These are examples only. Replace with your own Post-MVP features.*
 
-- Add second API
+- Add modal window to view selected work showing additional information including: medium, dimensions and credit line
 - Use local storage to save user favorites
+- Show artist bio above works if artist is the selected category
 
 ## Project Schedule
 
-This schedule will be used to keep track of your progress throughout the week and align with our expectations.  
-
-You are **responsible** for scheduling time with your squad to seek approval for each deliverable by the end of the corresponding day, excluding `Saturday` and `Sunday`.
-
 |  Day | Deliverable | Status
 |---|---| ---|
-|July 10-12| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
-|July 13| Project Approval | Incomplete
-|July 13| Core Application Structure (HTML, CSS, etc.) | Incomplete
-|July 14| Pseudocode / actual code | Incomplete
-|July 15| Initial Clickable Model  | Incomplete
-|July 16| MVP | Incomplete
-|July 17| Presentations | Incomplete
+|Aug 28-29| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|Aug 30| Project Approval / Core Application Structure (HTML, CSS, etc) | Incomplete
+|Aug 31| Pseudocode / actual code  | Incomplete
+|Sept 1| actual code / CSS  | Incomplete
+|Sept 2| CSS / Initial Clickable Model  | Incomplete
+|Sept 3| Advanced CSS / Post MVP | Incomplete
+|Sept 4| Presentations | Incomplete
 
 ## Priority Matrix
 
