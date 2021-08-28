@@ -8,6 +8,8 @@ Connoiseur is an app that allows users to search for works of art from the Metro
 
 [Metropolitan Museum of Art API](https://metmuseum.github.io/#search)
 
+the following code is pulled from the object search for this item by ID: [https://collectionapi.metmuseum.org/public/collection/v1/objects/2397](https://collectionapi.metmuseum.org/public/collection/v1/objects/2397)
+
 ```javascript
 {
     "objectID": 2397,
@@ -95,9 +97,8 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 
 #### PostMVP  
 
-- Add modal window to view selected work showing additional information including: medium, dimensions and credit line
-- Use local storage to save user favorites
 - Show artist bio above works if artist is the selected category
+- Add modal window to view selected work showing additional information including: medium, dimensions and credit line
 
 ## Project Schedule
 
@@ -117,15 +118,22 @@ Include a full list of features that have been prioritized based on the `Time an
 
 ## Timeframes
 
-Tell us how long you anticipate spending on each area of development. Be sure to consider how many hours a day you plan to be coding and how many days you have available until presentation day.
-
-Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Throughout your project, keep track of your Time Invested and Actual Time and update your README regularly.
-
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Form | H | 3hrs| 3.5hrs | 3.5hrs |
-| Working with API | H | 3hrs| 2.5hrs | 2.5hrs |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Basic HTML structure | H | 1 hr|  |  |
+| Initial CSS and creation of classes and ids | H | 3 hrs|  |  |
+| Test API end points| H | 2hrs|  | |
+| App logic to render random works to page on load | H | 4hrs|  | |
+| App logic for category search | H | 2hrs|  |  |
+| App logic for subcategory search | H | 2hrs|  |  |
+| App logic to render search results on the page | H | 3hrs| |  |
+| Initial flexbox CSS and media query | H | 4hrs|  |  |
+| Styling app body | H | 2 hrs|  |  |
+| Styling result cards and media query | H | 3 hrs|  |  |
+| Post MVP - add artist bio to results page | H | 1 hrs|  |  |
+| Post MVP - app logic for modal window | H | 3 hrs|  |  |
+| Post MVP - styling modal | H | 2 hrs|  |  |
+| Total | H | 32 hrs|  |  |
 
 ## Code Snippet
 
