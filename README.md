@@ -131,7 +131,7 @@ Include a full list of features that have been prioritized based on the `Time an
 | App logic to render random works to page on load | H | 4 hrs|  | |
 | App logic for department search | H | 2 hrs|  |  |
 | App logic to render search results on the page | H | 4 hrs| |  |
-| Initial flexbox CSS and media query | H | 4 hrs|  |  |
+| Initial flexbox CSS | H | 4 hrs|  |  |
 | Styling app body | H | 2 hrs|  |  |
 | Styling result cards and media query | H | 3 hrs|  |  |
 | Post MVP - CSS animation for card flip | M | 2 hr|  |  |
