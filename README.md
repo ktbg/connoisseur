@@ -1,4 +1,4 @@
-# Connoiseur - in progress
+# Connoiseur
 
 ## Project Description
 
