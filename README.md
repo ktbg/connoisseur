@@ -2,11 +2,29 @@
 
 ## Project Description
 
-Connoiseur is an app that allows users to search for works of art in the public domain from the Metropolitan Museum of Art collection by department. 
-
+Connoiseur is an app that allows users to search for works of art in the public domain from the Metropolitan Museum of Art collection by keyword or phrase.
 ## API and Data Sample
 
 [Metropolitan Museum of Art API](https://metmuseum.github.io/#search)
+
+The search url is in this format: https://collectionapi.metmuseum.org/public/collection/v1/search?q=[word or phrase] which returns a list of objectIDs.
+
+```javascript
+{
+    "total": 4349,
+    "objectIDs": [
+        4501,
+        14489,
+        17503,
+        451363,
+        40095,
+        549523,
+        549350,
+        543927,
+        549521,
+	...more...]
+}
+```
 
 the following code is pulled from the object search for this item by ID: [https://collectionapi.metmuseum.org/public/collection/v1/objects/2397](https://collectionapi.metmuseum.org/public/collection/v1/objects/2397)
 
@@ -84,13 +102,13 @@ the following code is pulled from the object search for this item by ID: [https:
 ## Wireframes
 
 Desktop view
-![desktop view](https://github.com/ktbg/connoiseur/blob/main/p1_desktopView.png)
+![desktop view]
 
 Mobile Portrait View
-![mobile portrait view](https://github.com/ktbg/connoiseur/blob/main/p1_mobilePortraitView.png)
+![mobile portrait view]
 
 Mobile Landscape View
-![mobile landscape view](https://github.com/ktbg/connoiseur/blob/main/p1_mobileLandscape.png)
+![mobile landscape view]
 
 
 ### MVP/PostMVP
@@ -98,7 +116,7 @@ Mobile Landscape View
 #### MVP 
 
 - Random selection of public domain works rendered on page load
-- Allow users to search by department
+- Allow users to search by keyword or phrase
 - Render works in the public domain from the selected department on the page with artist and year visible 
 
 #### PostMVP  
@@ -120,7 +138,7 @@ Mobile Landscape View
 
 ## Priority Matrix
 
-![Priority Matrix](https://github.com/ktbg/connoiseur/blob/main/p1_priorityMatrix.png)
+![Priority Matrix]
 
 ## Timeframes
 
@@ -129,11 +147,11 @@ Mobile Landscape View
 | Basic HTML structure | H | 1 hr|  |  |
 | Initial CSS and creation of classes and ids | H | 3 hrs|  |  |
 | Test API end points| H | 2 hrs|  | |
-| App logic to render random works to page on load | H | 4 hrs|  | |
-| App logic for department search | H | 2 hrs|  |  |
+| App logic to render random works to page on load | H | 3 hrs|  | |
+| App logic for keyword search | H | 4 hrs|  |  |
 | App logic to render search results on the page | H | 4 hrs| |  |
 | Initial flexbox CSS | H | 4 hrs|  |  |
-| Styling app body | H | 2 hrs|  |  |
+| Styling app body | H | 1 hrs|  |  |
 | Styling result cards and media query | H | 3 hrs|  |  |
 | Post MVP - App logic for modal window| M | 3 hr|  |  |
 | Post MVP - styling modal window | M | 1 hr|  |  |
