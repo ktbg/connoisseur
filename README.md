@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Connoiseur is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by department. Inspiration from the [Art Institute of Chicago](https://www.artic.edu/collection).
+Connoiseur is an app that allows users to search for works of art in the public domain from the Metropolitan Museum of Art collection by department. 
 
 ## API and Data Sample
 
