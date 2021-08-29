@@ -9,6 +9,8 @@ Connoiseur is an app that allows users to search for works of art in the public 
 
 The search url is in this format: https://collectionapi.metmuseum.org/public/collection/v1/search?q=[word] which returns a list of objectIDs.
 
+This search is from https://collectionapi.metmuseum.org/public/collection/v1/search?q=food
+
 ```javascript
 {
     "total": 4349,
