@@ -84,7 +84,7 @@ the following code is pulled from the object search for this item by ID: [https:
 ## Wireframes
 
 Desktop view
-![desktop view](https://github.com/ktbg/connoiseur/blob/main/p1_desktop_view.png)
+![desktop view]
 
 Mobile Portrait View
 ![mobile portrait view](https://github.com/ktbg/connoiseur/blob/main/p1_mobilePortraitView.png)
@@ -103,7 +103,7 @@ Mobile Landscape View
 
 #### PostMVP  
 
-- Add flip card animation to display additional information: medium, credit, dimensions
+- Add modal window that highlights additional information such as medium, dimensions, credit line
 - Add ability for user to save works in local storage and view saved works
 
 ## Project Schedule
@@ -135,9 +135,9 @@ Mobile Landscape View
 | Initial flexbox CSS | H | 4 hrs|  |  |
 | Styling app body | H | 2 hrs|  |  |
 | Styling result cards and media query | H | 3 hrs|  |  |
-| Post MVP - CSS animation for card flip | M | 2 hr|  |  |
-| Post MVP - styling card back | M | 1 hr|  |  |
-| Post MVP - app logic for local storage of favorites | L | 4 hr|  |  |
+| Post MVP - App logic for modal window| M | 3 hr|  |  |
+| Post MVP - styling modal window | M | 1 hr|  |  |
+| Post MVP - app logic for local storage of favorites | L | 3 hr|  |  |
 | Total |  | 32 hrs|  |  |
 
 ## Code Snippet
