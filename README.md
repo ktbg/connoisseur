@@ -140,7 +140,7 @@ Mobile Landscape View
 
 ## Priority Matrix
 
-![Priority Matrix]
+![Priority Matrix](https://github.com/ktbg/connoiseur/blob/main/p1_priorityMatrix2.png)
 
 ## Timeframes
 
