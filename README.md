@@ -119,7 +119,7 @@ Mobile Landscape View
 
 ## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matrix.  Link this image in a similar manner to your wireframes
+![Priority Matrix](https://github.com/ktbg/connoiseur/blob/main/p1_priorityMatrix.pdf)
 
 ## Timeframes
 
