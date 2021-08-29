@@ -83,10 +83,13 @@ the following code is pulled from the object search for this item by ID: [https:
 
 ## Wireframes
 
+Desktop view
 ![desktop view](https://github.com/ktbg/connoiseur/blob/main/p1_desktop_view.png)
 
+Mobile Portrait View
 ![mobile portrait view](https://github.com/ktbg/connoiseur/blob/main/p1_mobilePortraitView.png)
 
+Mobile Landscape View
 ![mobile landscape view](https://github.com/ktbg/connoiseur/blob/main/p1_mobile_landscap.png)
 
 
