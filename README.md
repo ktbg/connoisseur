@@ -119,7 +119,7 @@ Mobile Landscape View
 
 - Random selection of public domain works rendered on page load
 - Allow users to search by keyword or phrase
-- Render works in the public domain from the selected department on the page with artist and year visible 
+- Render works in the public domain from the selected search keyword or phrase on the page with artist and year visible 
 
 #### PostMVP  
 
