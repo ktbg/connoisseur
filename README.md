@@ -107,7 +107,7 @@ Desktop view
 ![desktop view]
 
 Mobile Portrait View
-![mobile portrait view]
+![mobile portrait view](https://github.com/ktbg/connoiseur/blob/main/p1_mobilePortrait4.png)
 
 Mobile Landscape View
 ![mobile landscape view](https://github.com/ktbg/connoiseur/blob/main/p1_mobileLandscape3.png)
