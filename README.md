@@ -97,6 +97,7 @@ Mobile Landscape View
 
 #### MVP 
 
+- Random selection of public domain works rendered on page load
 - Allow users to search by department
 - Render works in the public domain from the selected department on the page with artist and year visible 
 
