@@ -90,7 +90,7 @@ Mobile Portrait View
 ![mobile portrait view](https://github.com/ktbg/connoiseur/blob/main/p1_mobilePortraitView.png)
 
 Mobile Landscape View
-![mobile landscape view](https://github.com/ktbg/connoiseur/blob/main/p1_mobile_landscap.png)
+![mobile landscape view](https://github.com/ktbg/connoiseur/blob/main/p1_mobileLandscape.png)
 
 
 ### MVP/PostMVP
