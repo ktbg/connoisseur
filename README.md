@@ -2,7 +2,7 @@
 
 ## Project Description
 
-Connoiseur is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by artist, time period, or department. Inspiration from the [Art Institute of Chicago](https://www.artic.edu/collection).
+Connoiseur is an app that allows users to search for works of art from the Metropolitan Museum of Art collection by department. Inspiration from the [Art Institute of Chicago](https://www.artic.edu/collection).
 
 ## API and Data Sample
 
@@ -89,20 +89,19 @@ Upload images of your wireframes to an image hosting site or add them to an asse
 
 #### MVP 
 
-- Allow users to select a category to search by from artist, time period, department or medium
-- Allow users to search selected category to select a subcategory
-- Render works from the selected category and subcategory on page with artist and create date for the work
+- Allow users to search by department
+- Render works in the public domain from the selected department on the page with artist and year visible 
 
 #### PostMVP  
 
-- Show artist bio above works if artist is the selected category
-- Add modal window to view selected work showing additional information including: medium, dimensions and credit line
+- Add flip card animation to display additional information: medium, credit, dimensions
+- Add ability for user to save works in local storage and view saved works
 
 ## Project Schedule
 
 |  Day | Deliverable | Status
 |---|---| ---|
-|Aug 28-29| Prompt / Wireframes / Priority Matrix / Timeframes | Incomplete
+|Aug 28-29| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |Aug 30| Project Approval / Core Application Structure (HTML, CSS, etc) | Incomplete
 |Aug 31| Pseudocode / actual code  | Incomplete
 |Sept 1| actual code / CSS  | Incomplete
@@ -120,17 +119,15 @@ Include a full list of features that have been prioritized based on the `Time an
 | --- | :---: |  :---: | :---: | :---: |
 | Basic HTML structure | H | 1 hr|  |  |
 | Initial CSS and creation of classes and ids | H | 3 hrs|  |  |
-| Test API end points| H | 2hrs|  | |
-| App logic to render random works to page on load | H | 4hrs|  | |
-| App logic for category search | H | 2hrs|  |  |
-| App logic for subcategory search | H | 2hrs|  |  |
-| App logic to render search results on the page | H | 3hrs| |  |
+| Test API end points| H | 2 hrs|  | |
+| App logic to render random works to page on load | H | 4 hrs|  | |
+| App logic for department search | H | 2 hrs|  |  |
+| App logic to render search results on the page | H | 4 hrs| |  |
+| App logic for modal window | H | 3 hrs|  |  |
 | Initial flexbox CSS and media query | H | 4hrs|  |  |
 | Styling app body | H | 2 hrs|  |  |
 | Styling result cards and media query | H | 3 hrs|  |  |
-| Post MVP - add artist bio to results page | H | 1 hrs|  |  |
-| Post MVP - app logic for modal window | H | 3 hrs|  |  |
-| Post MVP - styling modal | H | 2 hrs|  |  |
+| styling modal | H | 4 hrs|  |  |
 | Total | H | 32 hrs|  |  |
 
 ## Code Snippet
