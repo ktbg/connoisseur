@@ -83,7 +83,8 @@ the following code is pulled from the object search for this item by ID: [https:
 
 ## Wireframes
 
-Upload images of your wireframes to an image hosting site or add them to an assets folder in your repo and link them here with a description of each specific wireframe.
+[desktop view](https://github.com/ktbg/connoiseur/blob/main/p1_desktopView.png)
+
 
 ### MVP/PostMVP
 
