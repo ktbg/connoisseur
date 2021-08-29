@@ -87,7 +87,7 @@ the following code is pulled from the object search for this item by ID: [https:
 
 ![mobile portrait view](https://github.com/ktbg/connoiseur/blob/main/p1_mobilePortraitView.png)
 
-![mobile landscape view]
+![mobile landscape view](https://github.com/ktbg/connoiseur/blob/main/p1_mobile_landscap.png)
 
 
 ### MVP/PostMVP
