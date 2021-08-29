@@ -134,9 +134,9 @@ Include a full list of features that have been prioritized based on the `Time an
 | Initial flexbox CSS and media query | H | 4 hrs|  |  |
 | Styling app body | H | 2 hrs|  |  |
 | Styling result cards and media query | H | 3 hrs|  |  |
-| Post MVP - CSS animation for card flip | H | 2 hr|  |  |
-| Post MVP - styling card back | H | 1 hr|  |  |
-| Post MVP - app logic for local storage of favorites | H | 4 hr|  |  |
+| Post MVP - CSS animation for card flip | M | 2 hr|  |  |
+| Post MVP - styling card back | M | 1 hr|  |  |
+| Post MVP - app logic for local storage of favorites | L | 4 hr|  |  |
 | Total | H | 32 hrs|  |  |
 
 ## Code Snippet
