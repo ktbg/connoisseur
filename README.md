@@ -131,7 +131,7 @@ Mobile Landscape View
 |  Day | Deliverable | Status
 |---|---| ---|
 |Aug 28-29| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
-|Aug 30| Project Approval / Core Application Structure (HTML, CSS, etc) | Incomplete
+|Aug 30| Project Approval / Core Application Structure (HTML, CSS, etc) | Complete
 |Aug 31| Pseudocode / actual code  | Incomplete
 |Sept 1| actual code / CSS  | Incomplete
 |Sept 2| CSS / Initial Clickable Model  | Incomplete
