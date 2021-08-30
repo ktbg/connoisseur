@@ -104,7 +104,7 @@ the following code is pulled from the object search for this item by ID: [https:
 ## Wireframes
 
 Desktop view
-![desktop view]
+![desktop view](https://github.com/ktbg/connoisseur/blob/main/images/p1_desktopView4.png)
 
 Mobile Portrait View
 ![mobile portrait view]
