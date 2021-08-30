@@ -2,8 +2,10 @@
 async function getSearchItems(search){
   try{
     let res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/search?q=${search}`);
-    let searchResultIds = res.data.objectIDs;
-    let totalResults = res.data.total;
+    // need to check if item is open access and if so add to array
+    // creat function for that
+        let searchResultIds = res.data.objectIDs;
+        let totalResults = searchResultIds.length;
     // console.log(totalResults);
 
   } catch(error){
@@ -19,6 +21,8 @@ async function getDetails(artworkId){
   try{
     let res = await axios.get(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${artworkId}`)
     // MVP need: title, artistDisplayName
+    // need to check if item is open access and if so add to array
+    // creat function for that
     let title = res.data.title;
     console.log(title);
     let artistDisplayName = res.data.artistDisplayName;
