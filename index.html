@@ -16,25 +16,39 @@
     <nav>Connoisseur</nav> 
     <!-- header img -->
     <div class="hero-img">
+      <!-- search bar -->
       <div class="hero-search">
         <input type="text" placeholder="artist or keyword">
         <button class="search-btn"><i class="fas fa-search"></i></button>
       </div>
     </div>
-    <!-- search bar -->
   </header>
   <main>
     <!-- where the results render goes -->
-    <div>
+    <div class="results">
       <!-- results text -->
+      <p class="result-total">results for 'something'</p>
       <!-- modal? -->
     </div>
     <!-- grid of images -->
     <div class="results-grid">
       <div class="art-card">
-        <img src="" alt="">
         <!-- artwork -->
-        <!-- year -->
+        <img class="result-img" src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/453183/903108/main-image" alt="The House of Bijapur">
+        <!-- Title -->
+        <h4>The House of Bijapur</h4>
+        <!-- artist -->
+        <p>by Kamal Muhammad</p>
+      </div>
+    </div>
+    <div class="results-grid">
+      <div class="art-card">
+        <!-- artwork -->
+        <img class="result-img" src="https://collectionapi.metmuseum.org/api/collection/v1/iiif/436580/1677735/main-image" alt="Aegina Visited by Jupiter">
+        <!-- Title -->
+        <h4>Aegina Visited by Jupiter</h4>
+        <!-- artist -->
+        <p>by Jean-Baptiste Greuze</p>
       </div>
     </div>
   </main>

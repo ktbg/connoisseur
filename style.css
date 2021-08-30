@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Open+Sans:wght@300;600&display=swap');
 
-/* font-family: 'Open Sans', sans-serif; */
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -31,17 +30,87 @@ time, mark, audio, video {
 }
 
 body {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  background-color:#dadada4d;
+  text-align: center;
 }
 
 nav {
+  font-family: 'Julius Sans One', sans-serif;
   color: #434343;
   padding: 0.5em;
-  font-size: 48px;
+  font-size: 2em;
+  text-align: left;
 }
 
-.hero {
-  border: 2px solid red;
-  max-height: 500px;
-  background-image: URL('https://collectionapi.metmuseum.org/api/collection/v1/iiif/437790/1763008/main-image');
+.hero-img {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://collectionapi.metmuseum.org/api/collection/v1/iiif/437790/1763008/main-image");
+  height: 15em;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-search {
+  position: absolute;
+  align-self: center;
+}
+
+div.hero-search input {
+  border-bottom-left-radius: 2px;
+  border-top-left-radius: 2px;
+  min-height: 20px;
+}
+
+div button.search-btn {
+  margin-left: -5px;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  min-height: 20px
+}
+
+.hero-search input, button.search-btn {
+  border: 1px solid #808080;
+}
+
+.fas.fa-search {
+  color: #494949;
+}
+
+div.results {
+  display:flex;
+  margin-top: 30px;
+  justify-content: center;
+}
+
+.results-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.art-card {
+  flex: 0 2 24%;
+  border: 1px solid #727272;
+  border-radius: 5px;
+  max-width: 300px;
+  max-height: 400px;
+  padding-bottom: 10px;
+  margin: 20px;
+  box-shadow: 5px 5px 5px #494949;
+  background-color: #ffffff;
+}
+
+div img.result-img {
+  margin: 20px;
+  max-width: 150px;
+  max-height: 250px;
+  height: auto;
+  width: auto;
+}
+
+h4, p {
+  font-size: 14px;
 }
