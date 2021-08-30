@@ -29,6 +29,11 @@ time, mark, audio, video {
     background:transparent;
 }
 
+button {
+  border-radius: 0;
+  box-shadow: none;
+}
+
 body {
   font-family: 'Open Sans', sans-serif;
   background-color:#dadada4d;
@@ -59,16 +64,17 @@ nav {
 }
 
 div.hero-search input {
-  border-bottom-left-radius: 2px;
-  border-top-left-radius: 2px;
-  min-height: 20px;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  min-height: 21px;
+  text-align: center;
 }
 
 div button.search-btn {
   margin-left: -5px;
-  border-top-right-radius: 2px;
-  border-bottom-right-radius: 2px;
-  min-height: 20px
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  min-height: 25px;
 }
 
 .hero-search input, button.search-btn {
@@ -105,7 +111,7 @@ div.results {
 }
 
 div img.result-img {
-  margin: 20px;
+  margin: 20px 20px 0 20px;
   max-width: 150px;
   max-height: 200px;
   height: auto;
