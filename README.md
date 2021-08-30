@@ -146,8 +146,8 @@ Mobile Landscape View
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Basic HTML structure | H | 1 hr| 10  |  |
-| Initial CSS and creation of classes and ids | H | 3 hrs|  |  |
+| Basic HTML structure | H | 1 hr| 20 min  |  |
+| Initial CSS and creation of classes and ids | H | 3 hrs| 20 min |  |
 | Test API end points| H | 2 hrs| 20 min| |
 | App logic to render random works to page on load | H | 3 hrs|  | |
 | App logic for keyword search | H | 4 hrs|  |  |
