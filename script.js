@@ -13,11 +13,7 @@ async function getSearchItems(search){
     let searchResultIds = res.data.objectIDs;
     // let searchItemDetails = searchResultIds.map(
     // console.log(searchResultIds);
-    searchResultIds.forEach((id) => {
-      console.log(secondApi(id));
-      // artworkDetails['title'] = result.title;
-    })
-    
+    secondApi(searchResultIds);
   } catch(error){
     console.log(error);
   }
@@ -25,6 +21,11 @@ async function getSearchItems(search){
 
 // for testing, remove this later
 getSearchItems("claude%20monet");
+
+// function getIdDetails(id){
+//   return secondApi(id);
+// }
+
 
 // ****************************************************************************
 // get details for cards based on returned object ID array from getSearchItems
@@ -56,12 +57,15 @@ function getDetails(artworkId){
   }
 }
 
-const secondApi = (async (id) => {
-  // arr.forEach((id) => {
-    return (await getDetails(id))
-  // })
-});
-// secondApi(['436965', '4501', '14489']);
+
+async function secondApi(arr){
+  for(let i = 0; i < arr.length; i++){
+    const id = arr[i];
+    const searchDetails = await getDetails(id);
+    console.log(searchDetails);
+  }
+};
+// secondApi('436965');
 
 // secondApi('436965');
 
