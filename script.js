@@ -12,8 +12,8 @@ async function getSearchItems(search){
     let res = await axios.get(`${searchUrl}${search}`);
     let searchResultIds = res.data.objectIDs;
     secondApi(searchResultIds);
-
     // call renderDetails here
+    // renderDetails(itemsToRender);
   } catch(error){
     console.log(error);
   }
@@ -40,7 +40,7 @@ async function secondApi(arr){
     searchDetails.push(result);
   }
   console.log(searchDetails);
-  return(searchDetails);
+  renderDetails(searchDetails);
 };
 
 // ****************************************************************************
@@ -55,19 +55,19 @@ function renderDetails(arr){
     newDiv.classList = "art-card";
     // img tag with returned URL, alt text needs to be artwork title
     let img = document.createElement("img");
-    img.setAttribute("src", item.primaryImage);
-    img.setAttribute("alt", item.title);
+    img.classList = "result-img";
+    img.setAttribute("src", item.data.primaryImage);
+    img.setAttribute("alt", item.data.title);
     // h3 = art work title
-    let h3 = document.createElement("h3");
-    h3.innerText = `${item.title}`;
+    let h4 = document.createElement("h4");
+    h4.innerText = `${item.data.title}`;
     // p = artist
     let p = document.createElement("p");
-    p.innerText = `${item.artistDisplayName}`
-
+    p.innerText = `${item.data.artistDisplayName}`;
+    // ^^ append to newly created div
+    resultsGrid.appendChild(newDiv);
+    newDiv.append(img, h4, p);
   })
-  resultsGrid.appendChild(newDiv);
-  newDiv.appendChild(img, h3, p);
-// ^^ append to newly created div
 }
 
 // POSTMVP

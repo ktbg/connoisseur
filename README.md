@@ -151,10 +151,10 @@ Mobile Landscape View
 | Test API end points| H | 2 hrs| 1.5 hrs| |
 | App logic to render random works to page on load | H | 3 hrs|  | |
 | App logic for keyword search | H | 4 hrs| 1 hr |  |
-| App logic to render search results on the page | H | 4 hrs| |  |
-| Initial flexbox CSS | H | 4 hrs|  |  |
-| Styling app body | H | 1 hrs|  |  |
-| Styling result cards and media query | H | 3 hrs|  |  |
+| App logic to render search results on the page | H | 4 hrs| 2 hrs |  |
+| Initial flexbox CSS | H | 4 hrs| 2 hrs |  |
+| Styling app body | H | 1 hrs| 20 min |  |
+| Styling result cards and media query | H | 3 hrs| 1 hr |  |
 | Post MVP - App logic for modal window| M | 3 hr|  |  |
 | Post MVP - styling modal window | M | 1 hr|  |  |
 | Post MVP - app logic for local storage of favorites | L | 3 hr|  |  |
