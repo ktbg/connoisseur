@@ -16,6 +16,28 @@ searchSection.addEventListener("submit", (e) => {
   console.log(input);
   getSearchItems(input);
 });
+// on load generate random department number code
+function department(){
+  try{
+    return axios.get('https://collectionapi.metmuseum.org/public/collection/v1/departments');
+  } catch(error){
+    console.log(error);
+  }
+}
+
+// on page load, random works from the department code chosen
+async function onLoad(){
+  try{
+    let res = await axios.get('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=painting');
+    let deptArr = department().length;
+    console.log(deptArr);
+    
+    // 
+  } catch(error){
+    console.log(error);
+  }
+}
+onLoad();
 
 // get object IDs from search word or term
 async function getSearchItems(search){
@@ -64,6 +86,11 @@ function renderDetails(arr){
     // create div with art-card class, append to .results-grid
     let newDiv = document.createElement("div");
     newDiv.classList = "art-card";
+    newDiv.setAttribute("id", item.data.objectId);
+    // event listener for modal click functionality
+    // newDiv.addEventListener("click", (e) => {
+    //   modalInfo(e.target.id);
+    // })
     // img tag with returned URL, alt text needs to be artwork title
     let img = document.createElement("img");
     img.classList = "result-img";
@@ -80,6 +107,12 @@ function renderDetails(arr){
     newDiv.append(img, h4, p);
   })
 }
+// gets additional modal info, medium, dimensions, creditLine
+// function modalInfo(){
+
+// }
+
+// renderModal function - to set layout of modal
 
 // POSTMVP
 //    YEAR
