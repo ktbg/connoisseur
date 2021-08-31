@@ -12,22 +12,26 @@ async function getSearchItems(search){
     let res = await axios.get(`${searchUrl}${search}`);
     let searchResultIds = res.data.objectIDs;
     // let searchItemDetails = searchResultIds.map(
-    // console.log(searchItemDetails);
-
+    // console.log(searchResultIds);
+    searchResultIds.forEach((id) => {
+      console.log(secondApi(id));
+      // artworkDetails['title'] = result.title;
+    })
+    
   } catch(error){
     console.log(error);
   }
 }
 
 // for testing, remove this later
-// getSearchItems("claude%20monet");
+getSearchItems("claude%20monet");
 
 // ****************************************************************************
 // get details for cards based on returned object ID array from getSearchItems
 // ****************************************************************************
 function getDetails(artworkId){
   try{
-      return res = axios.get(`${detailsUrl}${artworkId}`)
+      return axios.get(`${detailsUrl}${artworkId}`);
       // returns object of details
       // let searchDetails = res.data;
       // console.log(searchDetails);
@@ -52,11 +56,14 @@ function getDetails(artworkId){
   }
 }
 
-(async () => {
-  console.log(await(getDetails('436965')));
+const secondApi = (async (id) => {
+  // arr.forEach((id) => {
+    return (await getDetails(id))
+  // })
 });
+// secondApi(['436965', '4501', '14489']);
 
-// getDetails('436965');
+// secondApi('436965');
 
 // ****************************************************************************
 //  create cards based on number of ObjectIDS returned
