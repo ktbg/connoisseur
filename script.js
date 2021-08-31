@@ -1,10 +1,21 @@
 // variables
 const searchUrl     = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=';
 const detailsUrl    = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/';
-const artworkDetails  = {};
-// const details         = [];
+const resultsGrid   = document.querySelector(".results-grid");
+let searchSection   = document.querySelector(".hero-search");
+let searchInput     = document.querySelector("#input");
+let searchDetails   = [];
 
-
+console.log("page reloaded");
+searchSection.addEventListener("submit", (e) => {
+  e.preventDefault();
+  input = searchInput.value.split(" ").join("%20");
+  searchInput.value = "";
+  resultsGrid.innerHTML = "";
+  searchDetails = [];
+  console.log(input);
+  getSearchItems(input);
+});
 
 // get object IDs from search word or term
 async function getSearchItems(search){
@@ -12,15 +23,10 @@ async function getSearchItems(search){
     let res = await axios.get(`${searchUrl}${search}`);
     let searchResultIds = res.data.objectIDs;
     secondApi(searchResultIds);
-    // call renderDetails here
-    // renderDetails(itemsToRender);
   } catch(error){
     console.log(error);
   }
 }
-
-// for testing, remove this later
-getSearchItems("claude%20monet");
 
 // get details for cards based on returned object ID array from getSearchItems
 function getDetails(artworkId){
@@ -32,23 +38,28 @@ function getDetails(artworkId){
 }
 
 // async-await function for details based on objectId array returned from getSearchItems
-let searchDetails = [];
+
 async function secondApi(arr){
-  for(let i = 0; i < arr.length; i++){
+  let qtyReturned = 0;
+  if(arr.length > 100){
+    qtyReturned = 100;
+  } else {
+    qtyReturned = arr.length;
+  }
+  for(let i = 0; i < qtyReturned; i++){
     const id = arr[i];
     const result = await getDetails(id);
     searchDetails.push(result);
   }
-  console.log(searchDetails);
+  // return(searchDetails);
   renderDetails(searchDetails);
 };
 
 // ****************************************************************************
 //  create cards based on number of ObjectIDS returned
 // ****************************************************************************
-const resultsGrid = document.querySelector(".results-grid");
+
 function renderDetails(arr){
-  resultsGrid.innerHTML = "";
   arr.forEach((item) => {
     // create div with art-card class, append to .results-grid
     let newDiv = document.createElement("div");
@@ -89,8 +100,4 @@ function renderDetails(arr){
 //     }
 //   }
 //   console.log(`acceptable array length is ${viewableItems}`);
-// }
-
-// function renderDetails(){
-//   // loop over objectID array and call getDetails to render details to the page
 // }

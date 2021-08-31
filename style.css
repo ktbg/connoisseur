@@ -63,7 +63,7 @@ nav {
   align-self: center;
 }
 
-div.hero-search input {
+.hero-search input {
   border-bottom-left-radius: 3px;
   border-top-left-radius: 3px;
   min-height: 21px;
