@@ -156,7 +156,7 @@ Mobile Landscape View
 | Styling app body | H | 1 hrs| 20 min |  |
 | Styling result cards and media query | H | 3 hrs| 1 hr |  |
 | Post MVP - App logic for modal window| M | 3 hr| 3hr |  |
-| Post MVP - styling modal window | M | 1 hr|  |  |
+| Post MVP - styling modal window | M | 1 hr| .5 hrs |  |
 | Post MVP - app logic for local storage of favorites | L | 3 hr|  |  |
 | Total |  | 32 hrs|  |  |
 
