@@ -158,10 +158,11 @@ h4 {
 
 .modal-content {
   background-color: #ffffff;
-  margin: 15% auto;
+  margin: 10% auto;
   padding: 20px;
   border: 1px solid black;
   width: 80%;
+  border-radius: 5px;
 }
 
 /* modal image larger */
@@ -186,6 +187,7 @@ div.modal-content li {
 /* modal lis, no list decoration, text size smaller, space between lines more */
 div.modal-content li{
   list-style: none;
+  font-size: 14px;
 }
 .close {
   color: #3d3d3d;
