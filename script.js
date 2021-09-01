@@ -4,6 +4,7 @@ const detailsUrl    = 'https://collectionapi.metmuseum.org/public/collection/v1/
 const resultsGrid   = document.querySelector(".results-grid");
 const searchSection = document.querySelector(".hero-search");
 const result        = document.querySelector(".result-total");
+
 let input           = document.querySelector("#input");
 let searchDetails   = [];
 let startIndex      = 0;
@@ -16,17 +17,17 @@ console.log("page reloaded");
 async function onLoad(){
   try{
     let res = await axios.get('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=painting');
-    console.log(res);
     let objectIds = res.data.objectIDs;
     startEnd(objectIds.length);
-    console.log(startIndex, endIndex);
     const onLoadIds = objectIds.slice(startIndex, endIndex);
     secondApi(onLoadIds);
   } catch(error){
     console.log(error);
   }
 }
+
 onLoad();
+
 // find random starting index for objectIDs
 function startEnd(arrLength){
   startIndex = Math.floor(Math.random() * arrLength);
@@ -46,7 +47,6 @@ searchSection.addEventListener("submit", (e) => {
   console.log(input);
   getSearchItems(input);
 });
-
 
 // get object IDs from search word or term
 async function getSearchItems(search){
@@ -91,10 +91,10 @@ function renderDetails(arr){
     // create div with art-card class, append to .results-grid
     let newDiv = document.createElement("div");
     newDiv.classList = "art-card";
-    newDiv.setAttribute("id", item.data.objectId);
+    newDiv.setAttribute("id", item.data.objectID);
     // event listener for modal click functionality
     newDiv.addEventListener("click", (e) => {
-      // modalInfo(e.target.id);
+      modalInfo(e.target.id);
       console.log("modal listener clicked");
     })
     // img tag with returned URL, alt text needs to be artwork title
@@ -116,9 +116,9 @@ function renderDetails(arr){
 
 // -------------------------------- modal ------------------------------------------
 // gets additional modal info, medium, dimensions, creditLine
-// function modalInfo(){
-
-// }
+function modalInfo(itemId){
+  console.log(`clicked item id is ${itemId}`);
+}
 
 // renderModal function - to set layout of modal
 

@@ -123,7 +123,7 @@ div img.result-img {
 }
 
 h4, p {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .modal {
@@ -141,6 +141,10 @@ h4, p {
 @media screen and (min-width: 1024px){
   nav {
     font-size: 2em;
+  }
+  .modal {
+    width: 30%;
+    height: 30%;
   }
 }
 
