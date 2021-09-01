@@ -42,12 +42,12 @@ searchSection.addEventListener("submit", (e) => {
   e.preventDefault();
   result.innerText = `Top 50 open access results for '${input.value}'`;
   result.style.display = "block";
-  input = input.value.split(" ").join("%20");
+  let userInput = input.value.split(" ").join("%20");
   input.value = "";
   resultsGrid.innerHTML = "";
   searchDetails = [];
-  console.log(input);
-  getSearchItems(input);
+  console.log(userInput);
+  getSearchItems(userInput);
 });
 
 // get object IDs from search word or term
@@ -145,7 +145,6 @@ async function getModalDetails(artworkId){
     let modalCredit = ["credit", `${res.data.creditLine}`];
     const map = new Map([modalImg, modalArtist, modalTitle, modalDate, modalBeginDate, modalEndDate, modalMedium,  modalDimensions, modalCredit])
     const modalInfo = Object.fromEntries(map);
-    console.log(modalInfo);
     // render modal details with item information returned above
     renderModal(modalInfo);
   }catch(error){

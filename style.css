@@ -69,6 +69,7 @@ nav {
   border-top-left-radius: 3px;
   min-height: 21px;
   text-align: center;
+  outline: none;
 }
 
 button.search-btn:hover {
@@ -202,13 +203,26 @@ div.modal-content li{
     font-size: 2em;
   }
   .modal {
-    position: absolute;
-    max-width: 50%;
-    height: auto;
+    position: fixed;
+    /* max-width: 50%;
+    height: auto; */
+    max-height: 60%;
+    width: auto;
     left: 50%;
-    top: 10%;
+    /* top: 50%; */
     transform: translate(-50%, 50%);
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px #494949;
+    
   }
+  .modal-content{
+    min-height: 70%;
+    margin: auto;
+  }
+  .modal-img {
+    float: left;
+  }
+
   div img.result-img {
     max-width: 150px;
     max-height: 200px;
