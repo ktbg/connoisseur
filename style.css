@@ -44,7 +44,7 @@ nav {
   font-family: 'Julius Sans One', sans-serif;
   color: #434343;
   padding: 0.5em;
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: left;
 }
 
@@ -121,3 +121,25 @@ div img.result-img {
 h4, p {
   font-size: 14px;
 }
+
+@media screen and (min-width: 1024px){
+  nav {
+    font-size: 2em;
+  }
+}
+
+@media (orientation: landscape){
+  .hero-img{
+    height: 10em;
+  }
+
+  .art-card {
+    width: 250px;
+    margin: 30px;
+  }
+
+  div img.result-img {
+    max-width: 200px;
+  }
+}
+

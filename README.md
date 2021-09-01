@@ -149,7 +149,7 @@ Mobile Landscape View
 | Basic HTML structure | H | 1 hr| 20 min  |  |
 | Initial CSS and creation of classes and ids | H | 3 hrs| 1.5 hrs |  |
 | Test API end points| H | 2 hrs| 1.5 hrs| |
-| App logic to render random works to page on load | H | 3 hrs|  | |
+| App logic to render random works to page on load | H | 3 hrs| 1 hr | |
 | App logic for keyword search | H | 4 hrs| 1 hr |  |
 | App logic to render search results on the page | H | 4 hrs| 3 hrs |  |
 | Initial flexbox CSS | H | 4 hrs| 2 hrs |  |

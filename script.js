@@ -2,42 +2,50 @@
 const searchUrl     = 'https://collectionapi.metmuseum.org/public/collection/v1/search?q=';
 const detailsUrl    = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/';
 const resultsGrid   = document.querySelector(".results-grid");
-let searchSection   = document.querySelector(".hero-search");
-let searchInput     = document.querySelector("#input");
+const searchSection = document.querySelector(".hero-search");
+const searchInput   = document.querySelector("#search-input");
+let input           = document.querySelector("#input");
 let searchDetails   = [];
+let startIndex      = 0;
+let endIndex        = 0;
+
+// ----------------------------- on page load ---------------------------------------
 
 console.log("page reloaded");
-searchSection.addEventListener("submit", (e) => {
-  e.preventDefault();
-  input = searchInput.value.split(" ").join("%20");
-  searchInput.value = "";
-  resultsGrid.innerHTML = "";
-  searchDetails = [];
-  console.log(input);
-  getSearchItems(input);
-});
-// on load generate random department number code
-function department(){
-  try{
-    return axios.get('https://collectionapi.metmuseum.org/public/collection/v1/departments');
-  } catch(error){
-    console.log(error);
-  }
-}
-
 // on page load, random works from the department code chosen
 async function onLoad(){
   try{
     let res = await axios.get('https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=painting');
-    let deptArr = department().length;
-    console.log(deptArr);
-    
-    // 
+    console.log(res);
+    let objectIds = res.data.objectIDs;
+    startEnd(objectIds.length);
+    console.log(startIndex, endIndex);
+    const onLoadIds = objectIds.slice(startIndex, endIndex);
+    secondApi(onLoadIds);
   } catch(error){
     console.log(error);
   }
 }
 onLoad();
+// find random starting index for objectIDs
+function startEnd(arrLength){
+  startIndex = Math.floor(Math.random() * arrLength);
+  endIndex = startIndex + 50;
+}
+
+// ----------------------------- search logic ---------------------------------------
+
+searchSection.addEventListener("submit", (e) => {
+  e.preventDefault();
+  searchInput.innerText = `'${input.value}'`;
+  input = input.value.split(" ").join("%20");
+  input.value = "";
+  resultsGrid.innerHTML = "";
+  searchDetails = [];
+  console.log(input);
+  getSearchItems(input);
+});
+
 
 // get object IDs from search word or term
 async function getSearchItems(search){
@@ -60,11 +68,11 @@ function getDetails(artworkId){
 }
 
 // async-await function for details based on objectId array returned from getSearchItems
-
+// capped at 50 items due to load time
 async function secondApi(arr){
   let qtyReturned = 0;
-  if(arr.length > 100){
-    qtyReturned = 100;
+  if(arr.length > 50){
+    qtyReturned = 50;
   } else {
     qtyReturned = arr.length;
   }
@@ -73,14 +81,10 @@ async function secondApi(arr){
     const result = await getDetails(id);
     searchDetails.push(result);
   }
-  // return(searchDetails);
   renderDetails(searchDetails);
 };
 
-// ****************************************************************************
-//  create cards based on number of ObjectIDS returned
-// ****************************************************************************
-
+// ------------------------------- DOM append ---------------------------------------
 function renderDetails(arr){
   arr.forEach((item) => {
     // create div with art-card class, append to .results-grid
@@ -119,18 +123,3 @@ function renderDetails(arr){
 //    MEDIUM
 //    CREDIT
 
-// *************************************************************************************
-//              OPEN ACCESS CHECK - MAY ALREADY BE REMOVED (YET TO SEE THEM)
-// *************************************************************************************
-// check if item is in public domain
-// function openAccess(obj){
-//   console.log(`original array length is ${Object.keys(obj).length}`);
-//     let viewableItems = 0;
-//   for (const item in obj) {
-//     if(obj.isPublicDomain === true){
-//       // let viewableItems = Map.prototype.set(`${item.key}`, `${item.value}`);
-//       viewableItems += 1;
-//     }
-//   }
-//   console.log(`acceptable array length is ${viewableItems}`);
-// }
