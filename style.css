@@ -70,6 +70,10 @@ nav {
   text-align: center;
 }
 
+button.search-btn:hover {
+  background-color:#baf8db;
+}
+
 div button.search-btn {
   margin-left: -5px;
   border-top-right-radius: 3px;
@@ -83,7 +87,10 @@ div button.search-btn {
 
 .fas.fa-search {
   color: #494949;
+  width: 100%;
+  
 }
+
 
 div.results {
   display:flex;
@@ -114,6 +121,10 @@ div.results {
   background-color: #ffffff;
 }
 
+.art-card:hover {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
+}
+
 div img.result-img {
   margin: 20px 20px 0 20px;
   max-width: 150px;
@@ -124,8 +135,10 @@ div img.result-img {
 
 h4, p {
   font-size: 12px;
+  width: 80%;
+  margin: 0 auto;
 }
-
+/* ------------------------modal css ------------------------- */
 .modal {
   display: none;
   position: fixed;
@@ -135,7 +148,22 @@ h4, p {
   width: 100%;
   height: 100%;
   overflow: auto;
+  background-color: #d518ee;
+}
+
+.modal-content {
   background-color: #ffffff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid red;
+  width: 80%;
+}
+
+.close {
+  color: #3d3d3d;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
 }
 
 @media screen and (min-width: 1024px){

@@ -9,6 +9,7 @@ let input           = document.querySelector("#input");
 let searchDetails   = [];
 let startIndex      = 0;
 let endIndex        = 0;
+let modalContent    = document.querySelector(".modal-content");
 
 // ----------------------------- on page load ---------------------------------------
 
@@ -88,39 +89,67 @@ async function secondApi(arr){
 // ------------------------------- DOM append ---------------------------------------
 function renderDetails(arr){
   arr.forEach((item) => {
-    // create div with art-card class, append to .results-grid
-    let newDiv = document.createElement("div");
-    newDiv.classList = "art-card";
-    newDiv.setAttribute("id", item.data.objectID);
-    // event listener for modal click functionality
-    newDiv.addEventListener("click", (e) => {
-      modalInfo(e.target.id);
-      console.log("modal listener clicked");
-    })
-    // img tag with returned URL, alt text needs to be artwork title
-    let img = document.createElement("img");
-    img.classList = "result-img";
-    img.setAttribute("src", item.data.primaryImage);
-    img.setAttribute("alt", item.data.title);
-    // h3 = art work title
-    let h4 = document.createElement("h4");
-    h4.innerText = `${item.data.title}`;
-    // p = artist
-    let p = document.createElement("p");
-    p.innerText = `${item.data.artistDisplayName}`;
-    // ^^ append to newly created div
-    resultsGrid.appendChild(newDiv);
-    newDiv.append(img, h4, p);
+    if(item.data.primaryImage === ""){
+      return;
+    } else {
+          // create div with art-card class, append to .results-grid
+      let newDiv = document.createElement("div");
+      newDiv.classList = "art-card";
+      newDiv.setAttribute("id", item.data.objectID);
+          // event listener for modal click functionality
+      newDiv.addEventListener("click", (event) => {
+        console.log(`modal listener clicked on item id ${event.target.id}`);
+        modalInfo(event.target.id);
+      });
+          // img tag with returned URL, alt text needs to be artwork title
+      let img = document.createElement("img");
+      img.classList = "result-img";
+      img.setAttribute("src", item.data.primaryImage);
+      img.setAttribute("alt", item.data.title);
+          // h3 = art work title
+      let h4 = document.createElement("h4");
+      h4.innerText = `${item.data.title}`;
+          // p = artist
+      let p = document.createElement("p");
+      p.innerText = `${item.data.artistDisplayName}`;
+          // ^^ append to newly created div
+      resultsGrid.appendChild(newDiv);
+      newDiv.append(img, h4, p);
+    } 
   })
 }
 
 // -------------------------------- modal ------------------------------------------
 // gets additional modal info, medium, dimensions, creditLine
 function modalInfo(itemId){
+  // renderModal(item);
+  console.log(itemId);
   console.log(`clicked item id is ${itemId}`);
 }
 
+
+
 // renderModal function - to set layout of modal
+function renderModal(item){
+  // clear movie-list section and create new div
+  modalContent.innerHTML = "";
+  // let newDiv = document.createElement('div');
+  // newDiv.classList = 'movie-details';
+  // movieList.appendChild(newDiv);
+// create list items for movie details
+  let modalImg = document.querySelector(`#${item}`).img;
+  console.log(modalImg);
+  let ul = document.createElement('ul');
+  ul,innerHTML = "";
+  newDiv.appendChild(ul);
+  arr.forEach(function(item){
+    if(item !== undefined){
+      let li = document.createElement('li');
+      li.innerText = item;
+      ul.appendChild(li);
+    }
+  });
+}
 
 // POSTMVP
 //    YEAR
