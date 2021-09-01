@@ -4,6 +4,7 @@ const detailsUrl    = 'https://collectionapi.metmuseum.org/public/collection/v1/
 const resultsGrid   = document.querySelector(".results-grid");
 const searchSection = document.querySelector(".hero-search");
 const result        = document.querySelector(".result-total");
+const modal         = document.querySelector(".modal");
 
 let input           = document.querySelector("#input");
 let searchDetails   = [];
@@ -95,23 +96,26 @@ function renderDetails(arr){
           // create div with art-card class, append to .results-grid
       let newDiv = document.createElement("div");
       newDiv.classList = "art-card";
-      newDiv.setAttribute("id", item.data.objectID);
+      newDiv.setAttribute("name", `${item.data.objectID}`);
           // event listener for modal click functionality
-      newDiv.addEventListener("click", (event) => {
-        console.log(`modal listener clicked on item id ${event.target.id}`);
-        modalInfo(event.target.id);
+      newDiv.addEventListener("click", (e) => {
+        console.log(`modal listener clicked on item id ${e.target.name}`);
+        modalInfo(e.target.name);
       });
           // img tag with returned URL, alt text needs to be artwork title
       let img = document.createElement("img");
       img.classList = "result-img";
       img.setAttribute("src", item.data.primaryImage);
       img.setAttribute("alt", item.data.title);
+      img.setAttribute("name", `${item.data.objectID}`);
           // h3 = art work title
       let h4 = document.createElement("h4");
       h4.innerText = `${item.data.title}`;
+      h4.setAttribute("name", `${item.data.objectID}`);
           // p = artist
       let p = document.createElement("p");
       p.innerText = `${item.data.artistDisplayName}`;
+      p.setAttribute("name", `${item.data.objectID}`);
           // ^^ append to newly created div
       resultsGrid.appendChild(newDiv);
       newDiv.append(img, h4, p);
@@ -122,34 +126,84 @@ function renderDetails(arr){
 // -------------------------------- modal ------------------------------------------
 // gets additional modal info, medium, dimensions, creditLine
 function modalInfo(itemId){
-  // renderModal(item);
-  console.log(itemId);
-  console.log(`clicked item id is ${itemId}`);
+  getModalDetails(itemId);
 }
 
-
-
+async function getModalDetails(artworkId){
+  // get details for this item
+  try{
+    let res = await axios.get(`${detailsUrl}${artworkId}`);
+    console.log(res);
+    let modalImg = ["image", res.data.primaryImage];
+    let modalArtist = ["artist", `${res.data.artistDisplayName}`];
+    let modalTitle = ["title", `${res.data.title}`];
+    let modalDate = ["objectDate", res.data.objectDate];
+    let modalBeginDate = ["objectBeginDate", res.data.objectBeginDate];
+    let modalEndDate = ["objectEndDate", res.data.objectEndDate];
+    let modalMedium = ["medium", `${res.data.medium}`];
+    let modalDimensions = ["dimensions", `${res.data.dimensions}`];
+    let modalCredit = ["credit", `${res.data.creditLine}`];
+    const map = new Map([modalImg, modalArtist, modalTitle, modalDate, modalBeginDate, modalEndDate, modalMedium,  modalDimensions, modalCredit])
+    const modalInfo = Object.fromEntries(map);
+    console.log(modalInfo);
+    // render modal details with item information returned above
+    renderModal(modalInfo);
+  }catch(error){
+    console.log(error);
+  }
+}
+// idea for modal code from: https://www.w3schools.com/howto/howto_css_modals.asp
 // renderModal function - to set layout of modal
-function renderModal(item){
-  // clear movie-list section and create new div
+function renderModal(obj){
+    // clear modal-content section
   modalContent.innerHTML = "";
-  // let newDiv = document.createElement('div');
-  // newDiv.classList = 'movie-details';
-  // movieList.appendChild(newDiv);
-// create list items for movie details
-  let modalImg = document.querySelector(`#${item}`).img;
-  console.log(modalImg);
-  let ul = document.createElement('ul');
-  ul,innerHTML = "";
-  newDiv.appendChild(ul);
-  arr.forEach(function(item){
-    if(item !== undefined){
-      let li = document.createElement('li');
-      li.innerText = item;
-      ul.appendChild(li);
-    }
-  });
+    // add click listener to modal span to close modal
+  let span = document.querySelector(".close");
+  span.addEventListener("click", () => {
+    modal.style.display = "none";
+  })
+  // img tag with returned URL, alt text needs to be artwork title
+  let img = document.createElement("img");
+  img.classList = "modal-img";
+  img.setAttribute("src", obj.image);
+  img.setAttribute("alt", `${obj.title}`);
+      // h3 = art work title
+  let h4 = document.createElement("h4");
+  h4.innerText = `${obj.title}`;
+      // p = artist
+  let p = document.createElement("p");
+  p.innerText = `${obj.artist}`;
+
+  let ul = document.createElement("ul");
+  modalContent.append(img, h4, p, ul);
+    
+  let liYear = document.createElement("li");
+  if(obj.objectDate === ""){
+    liYear.innerHTML = `<strong>Year:</strong> ${obj.objectBeginDate} - ${obj.objectEndDate}`;
+  } else {
+    liYear.innerHTML = `<strong>Year:</strong> ${obj.objectDate}`;
+  }
+  let liMedium = document.createElement("li");
+  liMedium.innerHTML = `<strong>Medium:</strong> ${obj.medium}`;
+
+  let liDimensions = document.createElement("li");
+  liDimensions.innerHTML = `<strong>Dimensions:</strong> ${obj.dimensions}`;
+
+  let liCredit = document.createElement("li");
+  liCredit.innerHTML = `<strong>Credit:</strong> ${obj.credit}`;
+  ul.append(liYear, liMedium, liDimensions, liCredit);
+      // display modal
+  modal.style.display = "block"
 }
+
+
+
+// close modal with click outside the window on larger screens
+window.addEventListener("click", (e) => {
+  if(e.target === modal){
+    modal.style.display = "none";
+  }
+})
 
 // POSTMVP
 //    YEAR
