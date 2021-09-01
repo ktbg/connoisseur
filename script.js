@@ -3,7 +3,7 @@ const searchUrl     = 'https://collectionapi.metmuseum.org/public/collection/v1/
 const detailsUrl    = 'https://collectionapi.metmuseum.org/public/collection/v1/objects/';
 const resultsGrid   = document.querySelector(".results-grid");
 const searchSection = document.querySelector(".hero-search");
-const searchInput   = document.querySelector("#search-input");
+const result        = document.querySelector(".result-total");
 let input           = document.querySelector("#input");
 let searchDetails   = [];
 let startIndex      = 0;
@@ -37,7 +37,8 @@ function startEnd(arrLength){
 
 searchSection.addEventListener("submit", (e) => {
   e.preventDefault();
-  searchInput.innerText = `'${input.value}'`;
+  result.innerText = `Top 50 open access results for '${input.value}'`;
+  result.style.display = "block";
   input = input.value.split(" ").join("%20");
   input.value = "";
   resultsGrid.innerHTML = "";
@@ -92,9 +93,10 @@ function renderDetails(arr){
     newDiv.classList = "art-card";
     newDiv.setAttribute("id", item.data.objectId);
     // event listener for modal click functionality
-    // newDiv.addEventListener("click", (e) => {
-    //   modalInfo(e.target.id);
-    // })
+    newDiv.addEventListener("click", (e) => {
+      // modalInfo(e.target.id);
+      console.log("modal listener clicked");
+    })
     // img tag with returned URL, alt text needs to be artwork title
     let img = document.createElement("img");
     img.classList = "result-img";
@@ -111,6 +113,8 @@ function renderDetails(arr){
     newDiv.append(img, h4, p);
   })
 }
+
+// -------------------------------- modal ------------------------------------------
 // gets additional modal info, medium, dimensions, creditLine
 // function modalInfo(){
 

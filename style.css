@@ -91,6 +91,10 @@ div.results {
   justify-content: center;
 }
 
+.result-total {
+  display: none;
+}
+
 .results-grid {
   display: flex;
   flex-wrap: wrap;
@@ -120,6 +124,18 @@ div img.result-img {
 
 h4, p {
   font-size: 14px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #ffffff;
 }
 
 @media screen and (min-width: 1024px){
