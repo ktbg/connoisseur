@@ -211,7 +211,7 @@ div.modal-content li{
   margin-right: 5%;
 }
 
-@media screen and (min-width: 890px){
+@media screen and (min-width: 1024px){
   nav {
     font-size: 2em;
   }
@@ -230,12 +230,12 @@ div.modal-content li{
   .modal {
     position: absolute;
     height: auto;
-    max-width: 80%;
+    max-width: 60%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, 50%);
     border-radius: 5px;
-    box-shadow: 5px 5px 5px #494949;
+    box-shadow: 0 0 10px #494949;
   }
   .modal-content{
     min-height: 70%;
@@ -262,6 +262,8 @@ div.modal-content li{
     margin-right: 3%;
   }
 }
+
+
 
 @media (orientation: landscape){
   .hero-img{

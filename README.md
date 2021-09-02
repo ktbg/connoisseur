@@ -155,8 +155,8 @@ Mobile Landscape View
 | Initial flexbox CSS | H | 4 hrs| 2.5 hrs |  |
 | Styling app body | H | 1 hrs| 20 min |  |
 | Styling result cards and media query | H | 3 hrs| 2 hrs |  |
-| Post MVP - App logic for modal window| M | 3 hr| 6 hrs |  |
-| Post MVP - styling modal window | M | 1 hr| 3 hrs |  |
+| Post MVP - App logic for modal window| M | 3 hr| 7 hrs |  |
+| Post MVP - styling modal window | M | 1 hr| 6 hrs |  |
 | Post MVP - app logic for local storage of favorites | L | 3 hrs|  |  |
 | Total |  | 32 hrs|  |  |
 
@@ -165,8 +165,17 @@ Mobile Landscape View
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
+// code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
+
+  if(/Android|webOs|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    modal.style.top = 0;
+  } else {
+    let viewPortTop = window.visualViewport.pageTop;
+    let viewPortHeight = window.visualViewport.height;
+    let positionModalTop = viewPortTop;
+    modal.style.top = `${positionModalTop}px`;
+  }
+  modal.style.display = "block"
 }
 ```
 

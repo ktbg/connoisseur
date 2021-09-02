@@ -41,7 +41,7 @@ function startEnd(arrLength){
 
 searchSection.addEventListener("submit", (e) => {
   e.preventDefault();
-  result.innerText = `Top 50 open access results for '${input.value}'`;
+  result.innerText = `Top open access results for '${input.value}'`;
   result.style.display = "block";
   let userInput = input.value.split(" ").join("%20");
   input.value = "";
@@ -102,6 +102,7 @@ function renderDetails(arr){
       newDiv.addEventListener("click", (e) => {
         console.log(`modal listener clicked on item id ${e.target.name}`);
         modalInfo(e.target.name);
+        console.log(`viewport from inside modal click ${window.visualViewport.offsetTop}`);
       });
       // ======================= img div and image ==================================
       let imgDiv = document.createElement("div");
@@ -114,10 +115,11 @@ function renderDetails(arr){
         img.setAttribute("alt", item.data.title);
         img.setAttribute("name", `${item.data.objectID}`);
       // ======================= text div and text ================================== 
-          // h3 = art work title
+          
       let textDiv = document.createElement("div");
       textDiv.classList = "textDiv";
       textDiv.setAttribute("name", `${item.data.objectID}`);
+          // h4 artwork title
       let h4 = document.createElement("h4");
       h4.innerText = `${item.data.title}`;
       h4.setAttribute("name", `${item.data.objectID}`);
@@ -125,6 +127,16 @@ function renderDetails(arr){
       let p = document.createElement("p");
       p.innerHTML = `<strong>${item.data.artistDisplayName}</strong>`;
       p.setAttribute("name", `${item.data.objectID}`);
+
+      // ================ add click listener to items based on name for modal ========
+
+      // document.querySelectorAll(`[name="${item.data.objectId}"]`).forEach(item => {
+      //   item.addEventListener("click", (e) => {
+      //     console.log(`modal listener clicked on item id ${e.target.name}`);
+      //     modalInfo(e.target.name);
+      //     console.log(`viewport from inside modal click ${window.visualViewport.offsetTop}`);
+      //   })
+      // });
       // ================ append newly created items to respective div =============== 
           // ^^ append to newly created div
       resultsGrid.appendChild(newDiv);
@@ -174,6 +186,7 @@ function renderModal(obj){
   let span = document.querySelector(".close");
   span.addEventListener("click", () => {
     modal.style.display = "none";
+    modal.style.top = 0;
   })
 
   // ============================= img div and image ========================================
@@ -229,19 +242,22 @@ function renderModal(obj){
   if(/Android|webOs|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     modal.style.top = 0;
   } else {
+    let viewPortTop = window.visualViewport.pageTop;
+    console.log(viewPortTop);
     let viewPortHeight = window.visualViewport.height;
-    let positionModalTop = viewPortHeight/2;
+    console.log(viewPortHeight);
+    let positionModalTop = viewPortTop;
     modal.style.top = `${positionModalTop}px`;
   }
   modal.style.display = "block"
 }
 
 // close modal with click outside the window on larger screens
-body.addEventListener("click", (e) => {
-  if(e.target === modal){
-    console.log("click on body registered");
-    modal.style.display = "none";
-  }
-})
+// document.addEventListener("click", (e) => {
+//     console.log("click on body registered");
+//     if(modal.style.display == "block"){
+//       modal.style.display = "none";
+//     }
+// })
 
 
