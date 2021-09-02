@@ -102,19 +102,21 @@ function renderDetails(arr){
         console.log(`modal listener clicked on item id ${e.target.name}`);
         modalInfo(e.target.name);
       });
+      let imgDiv = document.createElement("div");
+      imgDiv.classList = "imgDiv";
           // img tag with returned URL, alt text needs to be artwork title
-      let img = document.createElement("img");
-      img.classList = "result-img";
-      img.setAttribute("src", item.data.primaryImage);
-      img.setAttribute("alt", item.data.title);
-      img.setAttribute("name", `${item.data.objectID}`);
+        let img = document.createElement("img");
+        img.classList = "result-img";
+        img.setAttribute("src", item.data.primaryImage);
+        img.setAttribute("alt", item.data.title);
+        img.setAttribute("name", `${item.data.objectID}`);
           // h3 = art work title
       let h4 = document.createElement("h4");
       h4.innerText = `${item.data.title}`;
       h4.setAttribute("name", `${item.data.objectID}`);
           // p = artist
       let p = document.createElement("p");
-      p.innerText = `${item.data.artistDisplayName}`;
+      p.innerHTML = `<strong>${item.data.artistDisplayName}</strong>`;
       p.setAttribute("name", `${item.data.objectID}`);
           // ^^ append to newly created div
       resultsGrid.appendChild(newDiv);
@@ -134,15 +136,15 @@ async function getModalDetails(artworkId){
   try{
     let res = await axios.get(`${detailsUrl}${artworkId}`);
     console.log(res);
-    let modalImg = ["image", res.data.primaryImage];
-    let modalArtist = ["artist", `${res.data.artistDisplayName}`];
-    let modalTitle = ["title", `${res.data.title}`];
-    let modalDate = ["objectDate", res.data.objectDate];
-    let modalBeginDate = ["objectBeginDate", res.data.objectBeginDate];
-    let modalEndDate = ["objectEndDate", res.data.objectEndDate];
-    let modalMedium = ["medium", `${res.data.medium}`];
-    let modalDimensions = ["dimensions", `${res.data.dimensions}`];
-    let modalCredit = ["credit", `${res.data.creditLine}`];
+    const modalImg = ["image", res.data.primaryImage];
+    const modalArtist = ["artist", `${res.data.artistDisplayName}`];
+    const modalTitle = ["title", `${res.data.title}`];
+    const modalDate = ["objectDate", res.data.objectDate];
+    const modalBeginDate = ["objectBeginDate", res.data.objectBeginDate];
+    const modalEndDate = ["objectEndDate", res.data.objectEndDate];
+    const modalMedium = ["medium", `${res.data.medium}`];
+    const modalDimensions = ["dimensions", `${res.data.dimensions}`];
+    const modalCredit = ["credit", `${res.data.creditLine}`];
     const map = new Map([modalImg, modalArtist, modalTitle, modalDate, modalBeginDate, modalEndDate, modalMedium,  modalDimensions, modalCredit])
     const modalInfo = Object.fromEntries(map);
     // render modal details with item information returned above
@@ -171,7 +173,7 @@ function renderModal(obj){
   h4.innerText = `${obj.title}`;
       // p = artist
   let p = document.createElement("p");
-  p.innerText = `${obj.artist}`;
+  p.innerHTML = `<strong>${obj.artist}</strong>`;
 
   let ul = document.createElement("ul");
   modalContent.append(img, h4, p, ul);
@@ -195,17 +197,12 @@ function renderModal(obj){
   modal.style.display = "block"
 }
 
-
-
 // close modal with click outside the window on larger screens
 window.addEventListener("click", (e) => {
   if(e.target === modal){
+    console.log("click on window registered");
     modal.style.display = "none";
   }
 })
 
-// POSTMVP
-//    YEAR
-//    MEDIUM
-//    CREDIT
 
