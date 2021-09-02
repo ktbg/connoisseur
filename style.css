@@ -168,13 +168,16 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  /* align-items: flex-start; */
   background-color: #ffffff;
   margin: 10% auto;
   padding: 20px;
   border: 1px solid black;
   width: 80%;
   border-radius: 5px;
+}
+div.imgDiv, div.textDiv {
+  align-content: center;
 }
 
 /* modal image larger */
@@ -211,7 +214,7 @@ div.modal-content li{
   margin-right: 5%;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 890px){
   nav {
     font-size: 2em;
   }
