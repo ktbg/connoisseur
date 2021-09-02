@@ -75,8 +75,8 @@ function getDetails(artworkId){
 // capped at 50 items due to load time
 async function secondApi(arr){
   let qtyReturned = 0;
-  if(arr.length > 50){
-    qtyReturned = 50;
+  if(arr.length > 30){
+    qtyReturned = 30;
   } else {
     qtyReturned = arr.length;
   }
@@ -91,9 +91,9 @@ async function secondApi(arr){
 // ------------------------------- DOM append ---------------------------------------
 function renderDetails(arr){
   arr.forEach((item) => {
-    if(item.data.primaryImage === ""){
-      return;
-    } else {
+    // if(item.data.primaryImage === ""){
+    //   return;
+    // } else {
       // ======================= create art-card ==================================
       let newDiv = document.createElement("div");
       newDiv.classList = "art-card";
@@ -131,7 +131,6 @@ function renderDetails(arr){
       newDiv.append(imgDiv, textDiv);
       imgDiv.appendChild(img);
       textDiv.append(h4, p);
-    } 
   })
 }
 
@@ -219,13 +218,21 @@ function renderModal(obj){
 
   //=============================== append items to respective div =========================
     
-    modalContent.append(imgDiv, textDiv);
-    imgDiv.appendChild(img);
-    textDiv.append(h4, p, ul);
-    ul.append(liYear, liMedium, liDimensions, liCredit);
+  modalContent.append(imgDiv, textDiv);
+  imgDiv.appendChild(img);
+  textDiv.append(h4, p, ul);
+  ul.append(liYear, liMedium, liDimensions, liCredit);
 
   // =============================== display modal ==========================================
-      // display modal
+      // display modal in proper viewport for desktop versus mobile
+      // code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
+  if(/Android|webOs|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    modal.style.top = 0;
+  } else {
+    let viewPortHeight = window.visualViewport.height;
+    let positionModalTop = viewPortHeight/2;
+    modal.style.top = `${positionModalTop}px`;
+  }
   modal.style.display = "block"
 }
 

@@ -168,7 +168,7 @@ h4 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: space-evenly;
+  align-items: flex-start;
   background-color: #ffffff;
   margin: 10% auto;
   padding: 20px;
@@ -215,6 +215,18 @@ div.modal-content li{
   nav {
     font-size: 2em;
   }
+  /* code idea from: https://www.cssscript.com/minimal-overlay-modal-pure-css/ */
+  /* .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: opacity 200ms;
+    visibility: hidden;
+    opacity: 0;
+  } */
   .modal {
     position: absolute;
     height: auto;
@@ -224,7 +236,6 @@ div.modal-content li{
     transform: translate(-50%, 50%);
     border-radius: 5px;
     box-shadow: 5px 5px 5px #494949;
-    
   }
   .modal-content{
     min-height: 70%;
