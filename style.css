@@ -99,7 +99,6 @@ div button.search-btn {
   width: 100%;
 }
 
-
 div.results {
   display:flex;
   margin-top: 30px;
@@ -218,18 +217,7 @@ div.modal-content li{
   nav {
     font-size: 2em;
   }
-  /* code idea from: https://www.cssscript.com/minimal-overlay-modal-pure-css/ */
-  /* .overlay {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.5);
-    transition: opacity 200ms;
-    visibility: hidden;
-    opacity: 0;
-  } */
+
   .modal {
     position: absolute;
     height: auto;
@@ -265,8 +253,6 @@ div.modal-content li{
     margin-right: 3%;
   }
 }
-
-
 
 @media (orientation: landscape){
   .hero-img{

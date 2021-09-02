@@ -47,7 +47,6 @@ searchSection.addEventListener("submit", (e) => {
   input.value = "";
   resultsGrid.innerHTML = "";
   searchDetails = [];
-  console.log(userInput);
   getSearchItems(userInput);
 });
 
@@ -91,10 +90,9 @@ async function secondApi(arr){
 // ------------------------------- DOM append ---------------------------------------
 function renderDetails(arr){
   arr.forEach((item) => {
-    // if(item.data.primaryImage === ""){
-    //   return;
-    // } else {
+
       // ======================= create art-card ==================================
+
       let newDiv = document.createElement("div");
       newDiv.classList = "art-card";
       newDiv.setAttribute("name", `${item.data.objectID}`);
@@ -104,7 +102,9 @@ function renderDetails(arr){
         modalInfo(e.target.name);
         console.log(`viewport from inside modal click ${window.visualViewport.offsetTop}`);
       });
+
       // ======================= img div and image ==================================
+
       let imgDiv = document.createElement("div");
       imgDiv.classList = "imgDiv";
       imgDiv.setAttribute("name", `${item.data.objectID}`);
@@ -114,6 +114,7 @@ function renderDetails(arr){
         img.setAttribute("src", item.data.primaryImage);
         img.setAttribute("alt", item.data.title);
         img.setAttribute("name", `${item.data.objectID}`);
+
       // ======================= text div and text ================================== 
           
       let textDiv = document.createElement("div");
@@ -128,16 +129,8 @@ function renderDetails(arr){
       p.innerHTML = `<strong>${item.data.artistDisplayName}</strong>`;
       p.setAttribute("name", `${item.data.objectID}`);
 
-      // ================ add click listener to items based on name for modal ========
-
-      // document.querySelectorAll(`[name="${item.data.objectId}"]`).forEach(item => {
-      //   item.addEventListener("click", (e) => {
-      //     console.log(`modal listener clicked on item id ${e.target.name}`);
-      //     modalInfo(e.target.name);
-      //     console.log(`viewport from inside modal click ${window.visualViewport.offsetTop}`);
-      //   })
-      // });
       // ================ append newly created items to respective div =============== 
+
           // ^^ append to newly created div
       resultsGrid.appendChild(newDiv);
       newDiv.append(imgDiv, textDiv);
@@ -180,7 +173,7 @@ function renderModal(obj){
     // clear modal-content section
   modalContent.innerHTML = "";
 
-  // ============================= span to close modal =======================================
+    // ============================= span to close modal ============================
 
     // add click listener to modal span to close modal
   let span = document.querySelector(".close");
@@ -189,7 +182,7 @@ function renderModal(obj){
     modal.style.top = 0;
   })
 
-  // ============================= img div and image ========================================
+    // ============================= img div and image ==============================
 
   let imgDiv        = document.createElement("div");
   imgDiv.classList  = "imgDiv";
@@ -199,7 +192,7 @@ function renderModal(obj){
   img.setAttribute("src", obj.image);
   img.setAttribute("alt", `${obj.title}`);
 
-  // ============================== text div and all text ==================================
+    // ============================== text div and all text =========================
 
   let textDiv = document.createElement("div");
   textDiv.classList = "textDiv";
@@ -228,36 +221,24 @@ function renderModal(obj){
     let liCredit = document.createElement("li");
     liCredit.innerHTML = `<strong>Credit:</strong> ${obj.credit}`;
     
-
-  //=============================== append items to respective div =========================
+    //=============================== append items to respective div ================
     
   modalContent.append(imgDiv, textDiv);
   imgDiv.appendChild(img);
   textDiv.append(h4, p, ul);
   ul.append(liYear, liMedium, liDimensions, liCredit);
 
-  // =============================== display modal ==========================================
+    // =============================== display modal ================================
       // display modal in proper viewport for desktop versus mobile
       // code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
   if(/Android|webOs|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     modal.style.top = 0;
   } else {
     let viewPortTop = window.visualViewport.pageTop;
-    console.log(viewPortTop);
     let viewPortHeight = window.visualViewport.height;
-    console.log(viewPortHeight);
     let positionModalTop = viewPortTop;
     modal.style.top = `${positionModalTop}px`;
   }
   modal.style.display = "block"
 }
-
-// close modal with click outside the window on larger screens
-// document.addEventListener("click", (e) => {
-//     console.log("click on body registered");
-//     if(modal.style.display == "block"){
-//       modal.style.display = "none";
-//     }
-// })
-
 

@@ -158,7 +158,7 @@ Mobile Landscape View
 | Post MVP - App logic for modal window| M | 3 hr| 7 hrs |  |
 | Post MVP - styling modal window | M | 1 hr| 6 hrs |  |
 | Post MVP - app logic for local storage of favorites | L | 3 hrs|  |  |
-| Total |  | 32 hrs|  |  |
+| Total |  | 32 hrs|  31.16 hrs|  |
 
 ## Code Snippet
 
@@ -180,5 +180,5 @@ Use this section to include a brief code snippet of functionality that you are p
 ```
 
 ## Change Log
- Use this section to document what changes were made and the reasoning behind those changes.  
+ No changes to original project proposal
 
