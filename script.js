@@ -5,6 +5,7 @@ const resultsGrid   = document.querySelector(".results-grid");
 const searchSection = document.querySelector(".hero-search");
 const result        = document.querySelector(".result-total");
 const modal         = document.querySelector(".modal");
+const body          = document.querySelector("body");
 
 let input           = document.querySelector("#input");
 let searchDetails   = [];
@@ -198,9 +199,9 @@ function renderModal(obj){
 }
 
 // close modal with click outside the window on larger screens
-window.addEventListener("click", (e) => {
+body.addEventListener("click", (e) => {
   if(e.target === modal){
-    console.log("click on window registered");
+    console.log("click on body registered");
     modal.style.display = "none";
   }
 })

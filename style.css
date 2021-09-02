@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Open+Sans:wght@300;600&display=swap');
 
+/* ------------------------- CSS reset ------------------------------------- */
 /*
 html5doctor.com Reset Stylesheet
 v1.6.1
@@ -28,20 +29,22 @@ time, mark, audio, video {
     vertical-align:baseline;
     background:transparent;
 }
-#icon {
-  color: white;
-}
 
 button {
   border-radius: 0;
   box-shadow: none;
 }
 
+/* --------------------------- connoisseur styles------------------------------------ */
 body {
   font-family: 'Open Sans', sans-serif;
   background-color:#dadada4d;
   text-align: center;
   max-height: 60%;
+}
+
+.darken {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
 }
 
 nav {
@@ -176,11 +179,11 @@ h4 {
 }
 /* modal work title large and different font */
 div.modal-content h4 {
-  font-size: 18px;
+  font-size: 1.125em;
 }
 /* modal artist larger font */
 div.modal-content p {
-  font-size: 14px;
+  font-size: 0.875px;
 }
 div.modal-content h4, 
 div.modal-content p,
@@ -191,7 +194,7 @@ div.modal-content li {
 /* modal lis, no list decoration, text size smaller, space between lines more */
 div.modal-content li{
   list-style: none;
-  font-size: 14px;
+  font-size: 0.875em;
 }
 .close {
   color: #3d3d3d;
@@ -201,14 +204,14 @@ div.modal-content li{
   margin-right: 5%;
 }
 
-@media screen and (min-width: 1024px){
+@media screen and (min-width: 890px){
   nav {
     font-size: 2em;
   }
   .modal {
-    position: fixed;
-    max-height: 60%;
-    width: auto;
+    position: absolute;
+    height: auto;
+    max-width: 80%;
     left: 50%;
     transform: translate(-50%, 50%);
     border-radius: 5px;
@@ -217,7 +220,7 @@ div.modal-content li{
   }
   .modal-content{
     min-height: 70%;
-    margin: 20px auto;
+    margin: 30px auto;
   }
   .modal-img {
     float: left;
@@ -231,6 +234,9 @@ div.modal-content li{
   }
   .art-card{
     width: 250px;
+  }
+  .close {
+    margin-right: 3%;
   }
 }
 
@@ -259,6 +265,12 @@ div.modal-content li{
     float: left;
     margin-right: 30px;
   }
- 
+  div.modal-content h4 {
+    font-size: 0.875em;
+    margin: 10px auto;
+  }
+  div.modal-content li{
+    font-size: 0.75em;
+  }
 }
 
