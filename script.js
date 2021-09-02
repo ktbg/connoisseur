@@ -94,7 +94,7 @@ function renderDetails(arr){
     if(item.data.primaryImage === ""){
       return;
     } else {
-          // create div with art-card class, append to .results-grid
+      // ======================= create art-card ==================================
       let newDiv = document.createElement("div");
       newDiv.classList = "art-card";
       newDiv.setAttribute("name", `${item.data.objectID}`);
@@ -103,15 +103,21 @@ function renderDetails(arr){
         console.log(`modal listener clicked on item id ${e.target.name}`);
         modalInfo(e.target.name);
       });
+      // ======================= img div and image ==================================
       let imgDiv = document.createElement("div");
       imgDiv.classList = "imgDiv";
+      imgDiv.setAttribute("name", `${item.data.objectID}`);
           // img tag with returned URL, alt text needs to be artwork title
         let img = document.createElement("img");
         img.classList = "result-img";
         img.setAttribute("src", item.data.primaryImage);
         img.setAttribute("alt", item.data.title);
         img.setAttribute("name", `${item.data.objectID}`);
+      // ======================= text div and text ================================== 
           // h3 = art work title
+      let textDiv = document.createElement("div");
+      textDiv.classList = "textDiv";
+      textDiv.setAttribute("name", `${item.data.objectID}`);
       let h4 = document.createElement("h4");
       h4.innerText = `${item.data.title}`;
       h4.setAttribute("name", `${item.data.objectID}`);
@@ -119,9 +125,12 @@ function renderDetails(arr){
       let p = document.createElement("p");
       p.innerHTML = `<strong>${item.data.artistDisplayName}</strong>`;
       p.setAttribute("name", `${item.data.objectID}`);
+      // ================ append newly created items to respective div =============== 
           // ^^ append to newly created div
       resultsGrid.appendChild(newDiv);
-      newDiv.append(img, h4, p);
+      newDiv.append(imgDiv, textDiv);
+      imgDiv.appendChild(img);
+      textDiv.append(h4, p);
     } 
   })
 }
@@ -155,45 +164,67 @@ async function getModalDetails(artworkId){
   }
 }
 // idea for modal code from: https://www.w3schools.com/howto/howto_css_modals.asp
-// renderModal function - to set layout of modal
+// ------------------------------- modal html elements --------------------------------------
 function renderModal(obj){
     // clear modal-content section
   modalContent.innerHTML = "";
+
+  // ============================= span to close modal =======================================
+
     // add click listener to modal span to close modal
   let span = document.querySelector(".close");
   span.addEventListener("click", () => {
     modal.style.display = "none";
   })
-  // img tag with returned URL, alt text needs to be artwork title
-  let img = document.createElement("img");
-  img.classList = "modal-img";
+
+  // ============================= img div and image ========================================
+
+  let imgDiv        = document.createElement("div");
+  imgDiv.classList  = "imgDiv";
+      //// img tag with returned URL, alt text needs to be artwork title
+  let img           = document.createElement("img");
+  img.classList     = "modal-img";
   img.setAttribute("src", obj.image);
   img.setAttribute("alt", `${obj.title}`);
+
+  // ============================== text div and all text ==================================
+
+  let textDiv = document.createElement("div");
+  textDiv.classList = "textDiv";
       // h3 = art work title
   let h4 = document.createElement("h4");
   h4.innerText = `${obj.title}`;
       // p = artist
   let p = document.createElement("p");
   p.innerHTML = `<strong>${obj.artist}</strong>`;
-
+      // ul to contain addition information
   let ul = document.createElement("ul");
-  modalContent.append(img, h4, p, ul);
-    
+      
   let liYear = document.createElement("li");
-  if(obj.objectDate === ""){
-    liYear.innerHTML = `<strong>Year:</strong> ${obj.objectBeginDate} - ${obj.objectEndDate}`;
-  } else {
-    liYear.innerHTML = `<strong>Year:</strong> ${obj.objectDate}`;
-  }
-  let liMedium = document.createElement("li");
-  liMedium.innerHTML = `<strong>Medium:</strong> ${obj.medium}`;
+      // some works don't have a date so date range of artist is returned
+    if(obj.objectDate === ""){
+      liYear.innerHTML = `<strong>Year:</strong> ${obj.objectBeginDate} - ${obj.objectEndDate}`;
+    } else {
+      liYear.innerHTML = `<strong>Year:</strong> ${obj.objectDate}`;
+    }
+    let liMedium = document.createElement("li");
+    liMedium.innerHTML = `<strong>Medium:</strong> ${obj.medium}`;
 
-  let liDimensions = document.createElement("li");
-  liDimensions.innerHTML = `<strong>Dimensions:</strong> ${obj.dimensions}`;
+    let liDimensions = document.createElement("li");
+    liDimensions.innerHTML = `<strong>Dimensions:</strong> ${obj.dimensions}`;
 
-  let liCredit = document.createElement("li");
-  liCredit.innerHTML = `<strong>Credit:</strong> ${obj.credit}`;
-  ul.append(liYear, liMedium, liDimensions, liCredit);
+    let liCredit = document.createElement("li");
+    liCredit.innerHTML = `<strong>Credit:</strong> ${obj.credit}`;
+    
+
+  //=============================== append items to respective div =========================
+    
+    modalContent.append(imgDiv, textDiv);
+    imgDiv.appendChild(img);
+    textDiv.append(h4, p, ul);
+    ul.append(liYear, liMedium, liDimensions, liCredit);
+
+  // =============================== display modal ==========================================
       // display modal
   modal.style.display = "block"
 }
