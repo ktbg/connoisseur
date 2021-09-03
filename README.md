@@ -3,6 +3,8 @@
 ## Project Description
 
 Connoisseur is an app that allows users to search for works of art in the public domain from the Metropolitan Museum of Art collection by keyword or phrase.
+
+[Connoisseur](https://ktbg.github.io/connoisseur/)
 ## API and Data Sample
 
 [Metropolitan Museum of Art API](https://metmuseum.github.io/#search)
