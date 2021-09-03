@@ -165,16 +165,15 @@ Mobile Landscape View
 Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  
 
 ``` javascript
-    // ============================= display modal on screen ========================
-      // display modal in proper viewport for desktop versus mobile
       // if logic code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
   if(/Android|webOs|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     modal.style.top = 0;
   } else {
     // viewPort logic mine from MDN research
-    modal.style.top = `${window.visualViewport.pageTop}px`;
+    let location = window.visualViewport.pageTop;
+    modal.style.top = `${location}px`;
   }
-  modal.style.display = "block"
+  modal.style.display = "block";
 }
 ```
 

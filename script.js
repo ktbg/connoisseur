@@ -15,7 +15,6 @@ let modalContent    = document.querySelector(".modal-content");
 
 // ----------------------------- on page load ---------------------------------------
 
-console.log("page reloaded");
 // on page load, random works from the department code chosen
 async function onLoad(){
   try{
@@ -98,9 +97,7 @@ function renderDetails(arr){
       newDiv.setAttribute("name", `${item.data.objectID}`);
           // event listener for modal click functionality
       newDiv.addEventListener("click", (e) => {
-        console.log(`modal listener clicked on item id ${e.target.name}`);
         modalInfo(e.target.name);
-        // console.log(`viewport from inside modal click ${window.visualViewport.pageTop}`);
       });
 
       // ======================= img div and image ==================================
@@ -149,7 +146,6 @@ async function getModalDetails(artworkId){
   // get details for this item
   try{
     let res = await axios.get(`${detailsUrl}${artworkId}`);
-    console.log(res);
     const modalImg = ["image", res.data.primaryImage];
     const modalArtist = ["artist", `${res.data.artistDisplayName}`];
     const modalTitle = ["title", `${res.data.title}`];
@@ -224,7 +220,6 @@ function renderModal(obj){
   } else {
     // viewPort logic mine from MDN research
     let location = window.visualViewport.pageTop;
-    console.log(location);
     modal.style.top = `${location}px`;
   }
   modal.style.display = "block";
