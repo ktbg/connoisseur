@@ -228,14 +228,14 @@ function renderModal(obj){
   textDiv.append(h4, p, ul);
   ul.append(liYear, liMedium, liDimensions, liCredit);
 
-    // =============================== display modal ================================
+    // ============================= display modal on screen ========================
       // display modal in proper viewport for desktop versus mobile
-      // code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
-  if(/Android|webOs|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+      // if logic code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
+  if(/Android|webOs|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     modal.style.top = 0;
   } else {
+    // viewPort logic from MDN research
     let viewPortTop = window.visualViewport.pageTop;
-    let viewPortHeight = window.visualViewport.height;
     let positionModalTop = viewPortTop;
     modal.style.top = `${positionModalTop}px`;
   }
