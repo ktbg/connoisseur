@@ -234,10 +234,8 @@ function renderModal(obj){
   if(/Android|webOs|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
     modal.style.top = 0;
   } else {
-    // viewPort logic from MDN research
-    let viewPortTop = window.visualViewport.pageTop;
-    let positionModalTop = viewPortTop;
-    modal.style.top = `${positionModalTop}px`;
+    // viewPort logic mine from MDN research
+    modal.style.top = `${window.visualViewport.pageTop}px`;
   }
   modal.style.display = "block"
 }
