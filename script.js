@@ -100,7 +100,7 @@ function renderDetails(arr){
       newDiv.addEventListener("click", (e) => {
         console.log(`modal listener clicked on item id ${e.target.name}`);
         modalInfo(e.target.name);
-        console.log(`viewport from inside modal click ${window.visualViewport.pageTop}`);
+        // console.log(`viewport from inside modal click ${window.visualViewport.pageTop}`);
       });
 
       // ======================= img div and image ==================================
@@ -172,18 +172,14 @@ async function getModalDetails(artworkId){
 function renderModal(obj){
     // clear modal-content section
   modalContent.innerHTML = "";
-
-    // ============================= span to close modal ============================
-
+    // ============================= span to close modal ===========================
     // add click listener to modal span to close modal
   let span = document.querySelector(".close");
   span.addEventListener("click", () => {
     modal.style.display = "none";
     modal.style.top = 0;
   })
-
     // ============================= img div and image ==============================
-
   let imgDiv        = document.createElement("div");
   imgDiv.classList  = "imgDiv";
       //// img tag with returned URL, alt text needs to be artwork title
@@ -191,9 +187,7 @@ function renderModal(obj){
   img.classList     = "modal-img";
   img.setAttribute("src", obj.image);
   img.setAttribute("alt", `${obj.title}`);
-
     // ============================== text div and all text =========================
-
   let textDiv = document.createElement("div");
   textDiv.classList = "textDiv";
       // h3 = art work title
@@ -203,8 +197,7 @@ function renderModal(obj){
   let p = document.createElement("p");
   p.innerHTML = `<strong>${obj.artist}</strong>`;
       // ul to contain addition information
-  let ul = document.createElement("ul");
-      
+  let ul = document.createElement("ul"); 
   let liYear = document.createElement("li");
       // some works don't have a date so date range of artist is returned
     if(obj.objectDate === ""){
@@ -214,20 +207,15 @@ function renderModal(obj){
     }
     let liMedium = document.createElement("li");
     liMedium.innerHTML = `<strong>Medium:</strong> ${obj.medium}`;
-
     let liDimensions = document.createElement("li");
     liDimensions.innerHTML = `<strong>Dimensions:</strong> ${obj.dimensions}`;
-
     let liCredit = document.createElement("li");
     liCredit.innerHTML = `<strong>Credit:</strong> ${obj.credit}`;
-    
     //=============================== append items to respective div ================
-    
   modalContent.append(imgDiv, textDiv);
   imgDiv.appendChild(img);
   textDiv.append(h4, p, ul);
   ul.append(liYear, liMedium, liDimensions, liCredit);
-
     // ============================= display modal on screen ========================
       // display modal in proper viewport for desktop versus mobile
       // if logic code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
@@ -235,8 +223,10 @@ function renderModal(obj){
     modal.style.top = 0;
   } else {
     // viewPort logic mine from MDN research
-    modal.style.top = `${window.visualViewport.pageTop}px`;
+    let location = window.visualViewport.pageTop;
+    console.log(location);
+    modal.style.top = `${location}px`;
   }
-  modal.style.display = "block"
+  modal.style.display = "block";
 }
 
