@@ -100,7 +100,7 @@ function renderDetails(arr){
       newDiv.addEventListener("click", (e) => {
         console.log(`modal listener clicked on item id ${e.target.name}`);
         modalInfo(e.target.name);
-        console.log(`viewport from inside modal click ${window.visualViewport.offsetTop}`);
+        console.log(`viewport from inside modal click ${window.visualViewport.pageTop}`);
       });
 
       // ======================= img div and image ==================================
@@ -179,19 +179,8 @@ function renderModal(obj){
   let span = document.querySelector(".close");
   span.addEventListener("click", () => {
     modal.style.display = "none";
-        // ============================= display modal on screen ========================
-      // display modal in proper viewport for desktop versus mobile
-      // if logic code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
-    if(/Android|webOs|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-      modal.style.top = 0;
-    } else {
-      // viewPort logic mine from MDN research
-      modal.style.top = `${window.visualViewport.pageTop}px`;
-    }
-    modal.style.display = "block"
+    modal.style.top = 0;
   })
-    // modal.style.top = 0;
-  }
 
     // ============================= img div and image ==============================
 
@@ -239,15 +228,15 @@ function renderModal(obj){
   textDiv.append(h4, p, ul);
   ul.append(liYear, liMedium, liDimensions, liCredit);
 
-//     // ============================= display modal on screen ========================
-//       // display modal in proper viewport for desktop versus mobile
-//       // if logic code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
-//   if(/Android|webOs|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-//     modal.style.top = 0;
-//   } else {
-//     // viewPort logic mine from MDN research
-//     modal.style.top = `${window.visualViewport.pageTop}px`;
-//   }
-//   modal.style.display = "block"
-// }
+    // ============================= display modal on screen ========================
+      // display modal in proper viewport for desktop versus mobile
+      // if logic code idea from: https://dev.to/timhuang/a-simple-way-to-detect-if-browser-is-on-a-mobile-device-with-javascript-44j3
+  if(/Android|webOs|iPhone|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+    modal.style.top = 0;
+  } else {
+    // viewPort logic mine from MDN research
+    modal.style.top = `${window.visualViewport.pageTop}px`;
+  }
+  modal.style.display = "block"
+}
 
