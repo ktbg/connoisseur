@@ -134,11 +134,11 @@ Mobile Landscape View
 |---|---| ---|
 |Aug 28-29| Prompt / Wireframes / Priority Matrix / Timeframes | Complete
 |Aug 30| Project Approval / Core Application Structure (HTML, CSS, etc) | Complete
-|Aug 31| Pseudocode / actual code  | Incomplete
-|Sept 1| actual code / CSS  | Incomplete
-|Sept 2| CSS / Initial Clickable Model  | Incomplete
-|Sept 3| Advanced CSS / Post MVP | Incomplete
-|Sept 4| Presentations | Incomplete
+|Aug 31| Pseudocode / actual code  | Complete
+|Sept 1| actual code / CSS  | Complete
+|Sept 2| CSS / Initial Clickable Model  | Complete
+|Sept 3| Advanced CSS / Post MVP | Modal Complete
+|Sept 4| Presentations | Complete
 
 ## Priority Matrix
 
