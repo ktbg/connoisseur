@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Open+Sans:wght@300;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Open+Sans:wght@300;600&display=swap");
 
 /* ------------------------- CSS reset ------------------------------------- */
 /*
@@ -9,25 +9,82 @@ Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
-html, body, div, span, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-abbr, address, cite, code,
-del, dfn, em, img, ins, kbd, q, samp,
-small, strong, sub, sup, var,
-b, i,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure,
-footer, header, hgroup, menu, nav, section, summary,
-time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
 }
 
 button {
@@ -38,8 +95,8 @@ button {
 /* --------------------------- connoisseur styles------------------------------------ */
 body {
   position: relative;
-  font-family: 'Open Sans', sans-serif;
-  background-color:#dadada4d;
+  font-family: "Open Sans", sans-serif;
+  background-color: #dadada4d;
   text-align: center;
   max-height: 60%;
 }
@@ -49,7 +106,7 @@ body {
 }
 
 nav {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   color: #434343;
   padding: 0.5em;
   font-size: 1.5em;
@@ -57,7 +114,8 @@ nav {
 }
 
 .hero-img {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("https://collectionapi.metmuseum.org/api/collection/v1/iiif/437790/1763008/main-image");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("https://collectionapi.metmuseum.org/api/collection/v1/iiif/437790/1763008/main-image");
   height: 15em;
   background-position: bottom;
   background-repeat: no-repeat;
@@ -80,7 +138,7 @@ nav {
 }
 
 button.search-btn:hover {
-  background-color:#baf8db;
+  background-color: #baf8db;
 }
 
 div button.search-btn {
@@ -90,7 +148,8 @@ div button.search-btn {
   min-height: 25px;
 }
 
-.hero-search input, button.search-btn {
+.hero-search input,
+button.search-btn {
   border: 1px solid #808080;
 }
 
@@ -100,7 +159,7 @@ div button.search-btn {
 }
 
 div.results {
-  display:flex;
+  display: flex;
   margin-top: 30px;
   justify-content: center;
 }
@@ -140,14 +199,15 @@ div img.result-img {
   width: auto;
 }
 
-h4, p {
+h4,
+p {
   font-size: 12px;
   width: 80%;
   margin: 10px auto;
 }
 
 h4 {
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: "Julius Sans One", sans-serif;
   font-size: 14px;
 }
 /* ------------------------modal css ------------------------- */
@@ -175,7 +235,8 @@ h4 {
   width: 80%;
   border-radius: 5px;
 }
-div.imgDiv, div.textDiv {
+div.imgDiv,
+div.textDiv {
   align-content: center;
 }
 
@@ -194,14 +255,14 @@ div.modal-content h4 {
 div.modal-content p {
   font-size: 0.875px;
 }
-div.modal-content h4, 
+div.modal-content h4,
 div.modal-content p,
 div.modal-content li {
   text-align: left;
   margin: 10px 30px;
 }
 /* modal lis, no list decoration, text size smaller, space between lines more */
-div.modal-content li{
+div.modal-content li {
   list-style: none;
   font-size: 0.875em;
 }
@@ -211,9 +272,10 @@ div.modal-content li{
   font-size: 28px;
   font-weight: bold;
   margin-right: 5%;
+  cursor: pointer;
 }
 
-@media screen and (min-width: 890px){
+@media screen and (min-width: 890px) {
   nav {
     font-size: 2em;
   }
@@ -228,7 +290,7 @@ div.modal-content li{
     border-radius: 5px;
     box-shadow: 0 0 10px #494949;
   }
-  .modal-content{
+  .modal-content {
     min-height: 70%;
     margin: 30px auto;
     flex-direction: row;
@@ -246,7 +308,7 @@ div.modal-content li{
     height: auto;
     width: auto;
   }
-  .art-card{
+  .art-card {
     width: 250px;
   }
   .close {
@@ -254,8 +316,8 @@ div.modal-content li{
   }
 }
 
-@media (orientation: landscape){
-  .hero-img{
+@media (orientation: landscape) {
+  .hero-img {
     height: 10em;
   }
 
@@ -282,8 +344,7 @@ div.modal-content li{
   div.modal-content h4 {
     font-size: 0.875em;
   }
-  div.modal-content li{
+  div.modal-content li {
     font-size: 0.75em;
   }
 }
-
