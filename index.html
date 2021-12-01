@@ -1,50 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <script src="https://kit.fontawesome.com/1e51556d69.js" crossorigin="anonymous"></script>
-  <script defer src="./script.js"></script>
-  <!-- font awesome Creative Commons Attribution license https://fontawesome.com/license -->
-  <link rel="icon" href="./images/palette-solid.svg" type="image/svg">
-  <link type="text/css" rel="stylesheet" href="./style.css">
-  <title>Connoisseur</title>
-</head>
-<body>
-  <header>
-     <!-- nav with title -->
-    <nav>Connoisseur</nav> 
-    <!-- header img -->
-    <div class="hero-img">
-      <!-- search bar -->
-      <form class="hero-search">
-        <input id="input" type="text" placeholder="artist or keyword">
-        <button class="search-btn"><i class="fas fa-search"></i></button>
-      </form>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Application using third party API consumption to render works of art."
+    />
+    <meta name="title" property="og:title" content="Connoisseur" />
+    <meta property="og:type" content="Website" />
+    <meta
+      name="image"
+      property="og:image"
+      content="https://res.cloudinary.com/dszflj9df/image/upload/v1638376851/thumbnails/connoisseur_xktktu.png"
+    />
+    <meta
+      name="description"
+      property="og:description"
+      content="Application using third party API consumption to render works of art."
+    />
+    <meta name="author" content="Katie Boates-Goudreau" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/1e51556d69.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./script.js"></script>
+    <!-- font awesome Creative Commons Attribution license https://fontawesome.com/license -->
+    <link rel="icon" href="./images/favicon.ico" />
+    <link type="text/css" rel="stylesheet" href="./style.css" />
+    <title>Connoisseur</title>
+  </head>
+  <body>
+    <div id="modal-shadow">
+      <header>
+        <!-- nav with title -->
+        <nav>Connoisseur</nav>
+        <!-- header img -->
+        <div class="hero-img">
+          <!-- search bar -->
+          <form class="hero-search">
+            <input id="input" type="text" placeholder="artist or keyword" />
+            <button class="search-btn"><i class="fas fa-search"></i></button>
+          </form>
+        </div>
+      </header>
+      <main>
+        <!-- where the results render goes -->
+        <div class="results">
+          <!-- results text -->
+          <p class="result-total">results for 'something'</p>
+        </div>
+        <!-- grid of images -->
+        <div class="results-grid">
+          <!-- art-card -->
+        </div>
+        <!-- modal code idea from https://www.w3schools.com/howto/howto_css_modals.asp -->
+        <!-- the modal -->
+        <div id="myModal" class="modal">
+          <!-- modal content -->
+          <span class="close">&times;</span>
+          <div class="modal-content"></div>
+        </div>
+      </main>
     </div>
-  </header>
-  <main>
-    <!-- where the results render goes -->
-    <div class="results">
-      <!-- results text -->
-      <p class="result-total">results for 'something'</p>
-      <!-- modal? -->
-    </div>
-    <!-- grid of images -->
-    <div class="results-grid">
-      <!-- art-card -->
-    </div>
-    <!-- modal code idea from https://www.w3schools.com/howto/howto_css_modals.asp -->
-    <!-- the modal -->
-    <div id="myModal" class="modal">
-      <!-- modal content -->
-      <span class="close">&times;</span>
-      <div class="modal-content"></div>
-    </div>
-    
-  </main>
-  
-</body>
+  </body>
 </html>
