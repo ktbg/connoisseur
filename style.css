@@ -117,7 +117,7 @@ nav {
   color: #434343;
   margin: 0;
   padding: 0 0 1em 1.2em;
-  font-size: 1em;
+  font-size: 0.8em;
   text-align: left;
 }
 
@@ -297,6 +297,10 @@ div.modal-content li {
 @media screen and (min-width: 890px) {
   nav {
     font-size: 2em;
+  }
+
+  .subtitle {
+    font-size: 1em;
   }
 
   .modal {
